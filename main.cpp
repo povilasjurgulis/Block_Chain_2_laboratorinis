@@ -1,4 +1,6 @@
 #include <iostream>
+#include "main.h"
+#include "Blockchain.h"
 
 int main()
 {
