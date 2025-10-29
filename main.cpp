@@ -5,6 +5,8 @@
 #include <chrono>
 #include <fstream>
 
+// Povilo Jurgulio VU ISI Blokų Grandinių Technologijų 2 laboratorinis darbas
+
 using namespace std;
 using namespace std::chrono;
 
