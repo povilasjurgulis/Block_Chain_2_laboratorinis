@@ -170,3 +170,27 @@ bool TransactionGenerator::isValidTransaction(const Transaction& tx, const vecto
     }
     return false;
 }
+
+// ---------------------- MerkleTree ----------------------
+string MerkleTree::computePairHash(const string& left, const string& right) {
+    string combined = left + right;
+    return hash_function(combined);
+}
+
+string MerkleTree::computeMerkleRoot(const vector<Transaction>& transactions) {
+    if (transactions.empty()) {
+        string empty = "";
+        return hash_function(empty);
+    }
+    vector<string> hashes;
+    for (const auto& tx : transactions) hashes.push_back(tx.getTransactionId());
+    while (hashes.size() > 1) {
+        vector<string> next_level;
+        for (size_t i = 0; i < hashes.size(); i += 2) {
+            if (i + 1 < hashes.size()) next_level.push_back(computePairHash(hashes[i], hashes[i + 1]));
+            else next_level.push_back(computePairHash(hashes[i], hashes[i]));
+        }
+        hashes = next_level;
+    }
+    return hashes[0];
+}
