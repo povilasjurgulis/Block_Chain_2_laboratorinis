@@ -114,3 +114,59 @@ void UserGenerator::displayUserStats(const vector<User>& users) {
     print_both("  Balance Range: " + std::to_string((long long)min_balance) + " - " +
                std::to_string((long long)max_balance) + "\n");
 }
+
+// ---------------------- TransactionGenerator ----------------------
+mt19937 TransactionGenerator::rng;
+std::uniform_real_distribution<double> TransactionGenerator::amount_dist(1.0, 100.0);
+
+void TransactionGenerator::initializeRandom() {
+    random_device rd; rng.seed(rd());
+}
+
+vector<Transaction> TransactionGenerator::generateTransactions(const vector<User>& users, int transaction_count) {
+    initializeRandom();
+    vector<Transaction> transactions; transactions.reserve(transaction_count);
+    uniform_int_distribution<size_t> user_dist(0, users.size() - 1);
+    int valid_transactions = 0; int attempts = 0;
+    while (valid_transactions < transaction_count && attempts < transaction_count * 2) {
+        attempts++;
+        size_t sender_idx = user_dist(rng);
+        size_t receiver_idx = user_dist(rng);
+        if (sender_idx == receiver_idx) continue;
+        const User& sender = users[sender_idx];
+        const User& receiver = users[receiver_idx];
+        double max_amount = std::min(sender.getBalance() * 0.1, 100.0);
+        if (max_amount < 1.0) continue;
+        uniform_real_distribution<double> tx_amount_dist(1.0, max_amount);
+        double amount = tx_amount_dist(rng);
+        Transaction tx(sender.getPublicKey(), receiver.getPublicKey(), amount);
+        transactions.push_back(tx);
+        valid_transactions++;
+    }
+    return transactions;
+}
+
+void TransactionGenerator::displayTransactionStats(const vector<Transaction>& transactions) {
+    if (transactions.empty()) return;
+    double total_amount = 0.0;
+    set<string> participants;
+    for (const auto& tx : transactions) {
+        total_amount += tx.getAmount();
+        participants.insert(tx.getFromAddress());
+        participants.insert(tx.getToAddress());
+    }
+    print_both("Transaction Statistics:\n");
+    print_both("  Total Transactions: " + std::to_string(transactions.size()) + "\n");
+    print_both("  Total Volume: " + std::to_string((int)total_amount) + "\n");
+    print_both("  Average Amount: " + std::to_string((int)(total_amount / transactions.size())) + "\n");
+    print_both("  Unique Participants: " + std::to_string(participants.size()) + "\n");
+}
+
+bool TransactionGenerator::isValidTransaction(const Transaction& tx, const vector<User>& users) {
+    for (const auto& user : users) {
+        if (user.getPublicKey() == tx.getFromAddress()) {
+            return user.getBalance() >= tx.getAmount();
+        }
+    }
+    return false;
+}
