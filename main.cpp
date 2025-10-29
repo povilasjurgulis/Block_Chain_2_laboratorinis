@@ -65,6 +65,21 @@ int main()
     for (int i = 0; i < 10 && i < all_transactions.size(); i++) {
         all_transactions[i].displayTransaction();
     }
+
+    // Steps 3-5: Complete blockchain process
+    print_both("\nSTEPS 3-5: Blockchain process\n");
+    print_both("----------------------------------------\n");
+    demonstrateBlockchainProcess(users, all_transactions);
+    
+    print_both("\n--------------------------------------\n");
+    print_both("Viskas!\n");
+    
+    // Uždarome output file
+    output_file.close();
+    cout << "\nResults saved to rezultatai.txt" << endl;
+    
+    return 0;
+
 }
 
 // Demonstruokime blokų grandinių procesą
