@@ -20,7 +20,7 @@ public:
     void createGenesisBlock();
     Block getLatestBlock() const;
     void addTransaction(const Transaction& transaction);
-    void minePendingTransactions(const string& mining_reward_address, std::vector<User>& users);
+    void minePendingTransactions(const string& mining_reward_address, std::vector<User>& users, size_t max_txs_per_block);
     
     // Validation and utility
     bool isChainValid() const;

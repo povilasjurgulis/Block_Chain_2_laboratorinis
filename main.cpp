@@ -21,8 +21,7 @@ void print_both(const string& message) {
     }
 }
 
-void demonstrateBlockchainProcess(std::vector<User>& users, 
-                                 const std::vector<Transaction>& all_transactions);
+void demonstrateBlockchainProcess(std::vector<User>& users, const std::vector<Transaction>& all_transactions);
 
 int main()
 {
@@ -56,8 +55,8 @@ int main()
         users[i].displayUser();
     }
 
-    // Step 2: Generate around 10,000 transactions
-    print_both("\nSTEP 2: Transaction generation (around 10,000 transactions)\n");
+    // Step 2: Generate around 10000 transactions
+    print_both("\nSTEP 2: Transaction generation (around 10000 transactions)\n");
     print_both("----------------------------------------\n");
     std::vector<Transaction> all_transactions = TransactionGenerator::generateTransactions(users, 10000);
     TransactionGenerator::displayTransactionStats(all_transactions);
@@ -73,7 +72,6 @@ int main()
     print_both("----------------------------------------\n");
     demonstrateBlockchainProcess(users, all_transactions);
     
-    print_both("\n--------------------------------------\n");
     print_both("Viskas!\n");
     
     // Uždarome output file
@@ -101,22 +99,17 @@ void demonstrateBlockchainProcess(std::vector<User>& users,
     print_both("- Mining Reward: " + std::to_string(MINING_REWARD) + "\n");
     print_both("- Total Transactions to Process: " + std::to_string(all_transactions.size()) + "\n\n");
     
-    int total_blocks_to_mine = 5; // Mine 5 blocks for demonstration
-    
-    // Process transactions in batches
-    for (int block_num = 0; block_num < total_blocks_to_mine; block_num++) {
+    // Process transactions in batches until all transactions are processed
+    int block_num = 0;
+    while (true) {
         print_both("\n--- MINING BLOCK #" + std::to_string(block_num + 1) + " ---\n");
-        
-        // Step 3: Block Formation
+        // Step 3: Block Formation - add next batch of transactions to the pending pool
         int start_idx = block_num * MAX_TXS_PER_BLOCK;
+        if (start_idx >= all_transactions.size() && blockchain.getPendingTransactions().empty()) break;
+
         int end_idx = std::min(start_idx + MAX_TXS_PER_BLOCK, (int)all_transactions.size());
-        
-        if (start_idx >= all_transactions.size()) break;
-        
         print_both("Step 3 - Block Formation:\n");
-        print_both("  Selected " + std::to_string(end_idx - start_idx) + 
-                   " transactions from pool\n");
-        
+        print_both("  Selected " + std::to_string(end_idx - start_idx) + " transactions from pool\n");
         for (int i = start_idx; i < end_idx; i++) {
             blockchain.addTransaction(all_transactions[i]);
         }
@@ -125,8 +118,8 @@ void demonstrateBlockchainProcess(std::vector<User>& users,
         print_both("\nStep 4 - Mining (Proof-of-Work):\n");
         string miner_address = "Miner" + std::to_string(block_num + 1);
         
-    auto mine_start = high_resolution_clock::now();
-    blockchain.minePendingTransactions(miner_address, const_cast<std::vector<User>&>(users));
+        auto mine_start = high_resolution_clock::now();
+        blockchain.minePendingTransactions(miner_address, const_cast<std::vector<User>&>(users), MAX_TXS_PER_BLOCK);
     auto mine_end = high_resolution_clock::now();
         auto mine_duration = duration_cast<milliseconds>(mine_end - mine_start);
         
@@ -141,6 +134,7 @@ void demonstrateBlockchainProcess(std::vector<User>& users,
         } else {
             print_both(" Validation FAILED\n");
         }
+        block_num++;
     }
     
     // Final blockchain summary
@@ -151,7 +145,7 @@ void demonstrateBlockchainProcess(std::vector<User>& users,
     print_both("Chain Valid: " + string(blockchain.isChainValid() ? "YES" : "NO") + "\n");
     
     print_both("\nMiner Balances:\n");
-    for (int i = 1; i <= total_blocks_to_mine; i++) {
+    for (int i = 1; i <= block_num; i++) {
         string miner = "Miner" + std::to_string(i);
         double balance = blockchain.getBalance(miner);
         if (balance > 0) {

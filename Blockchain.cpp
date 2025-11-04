@@ -1,4 +1,5 @@
 #include "Blockchain.h"
+#include <unordered_map>
 
 Blockchain::Blockchain(uint32_t difficulty, double reward) 
     : difficulty(difficulty), mining_reward(reward) {
@@ -23,42 +24,87 @@ void Blockchain::addTransaction(const Transaction& transaction) {
     // Reduced verbosity - only show for first few transactions
 }
 
-void Blockchain::minePendingTransactions(const string& mining_reward_address, std::vector<User>& users) {
+void Blockchain::minePendingTransactions(const string& mining_reward_address, std::vector<User>& users, size_t max_txs_per_block) {
     // Record previous mempool size
     size_t prev_mempool = pending_transactions.size();
 
-    // Add mining reward to pending transactions
+    // We'll select up to max_txs_per_block valid transactions from pending_transactions
+    std::vector<Transaction> selected;
+    selected.reserve(max_txs_per_block + 1); // +1 for reward tx
+
+    // Build a simulated balance map from current users to validate sequentially
+    std::unordered_map<string, double> sim_balances;
+    for (const auto& user : users) sim_balances[user.getPublicKey()] = user.getBalance();
+
+    size_t rejected_invalid_id = 0;
+    size_t rejected_funds = 0;
+
+    for (const auto& tx : pending_transactions) {
+        if (selected.size() >= max_txs_per_block) break;
+
+        // Verify transaction ID by recomputing
+        std::string txdata = tx.toString();
+        std::string recomputed = hash_function(txdata);
+        if (recomputed != tx.getTransactionId()) {
+            // invalid tx id - skip
+            rejected_invalid_id++;
+            continue;
+        }
+
+        std::string from = tx.getFromAddress();
+        std::string to = tx.getToAddress();
+        double amount = tx.getAmount();
+
+        if (from == "SYSTEM") {
+            // reward-like or system txs are always allowed
+            selected.push_back(tx);
+            // update simulated balance for receiver
+            sim_balances[to] += amount;
+            continue;
+        }
+
+        double sender_balance = 0.0;
+        auto it = sim_balances.find(from);
+        if (it != sim_balances.end()) sender_balance = it->second;
+
+        if (sender_balance >= amount) {
+            // accept: apply to simulated balances
+            sim_balances[from] = sender_balance - amount;
+            sim_balances[to] += amount;
+            selected.push_back(tx);
+        } else {
+            // insufficient funds - skip for now
+            rejected_funds++;
+            continue;
+        }
+    }
+
+    // Add mining reward transaction (always included)
     Transaction reward_transaction("SYSTEM", mining_reward_address, mining_reward);
-    pending_transactions.push_back(reward_transaction);
+    selected.push_back(reward_transaction);
 
-    // Create block from current pending transactions
-    Block new_block(getLatestBlock().getBlockHash(), pending_transactions, difficulty);
-
-    // Mine the block (proof-of-work)
+    // Create and mine block from selected valid transactions
+    Block new_block(getLatestBlock().getBlockHash(), selected, difficulty);
     new_block.mineBlock();
-
-    // Add mined block to chain
     chain.push_back(new_block);
 
-    // Update user balances based on transactions in the block
+    // Apply selected transactions to actual users
     std::set<string> participants;
-    for (const auto& tx : new_block.getTransactions()) {
-        string from = tx.getFromAddress();
-        string to = tx.getToAddress();
+    for (const auto& tx : selected) {
+        std::string from = tx.getFromAddress();
+        std::string to = tx.getToAddress();
         double amount = tx.getAmount();
 
         if (from != "SYSTEM") {
-            // find sender and subtract
             for (auto& user : users) {
                 if (user.getPublicKey() == from) {
-                    user.subtractFromBalance(amount);
-                    participants.insert(from);
+                    bool ok = user.subtractFromBalance(amount);
+                    if (ok) participants.insert(from);
                     break;
                 }
             }
         }
 
-        // find receiver and add
         for (auto& user : users) {
             if (user.getPublicKey() == to) {
                 user.addToBalance(amount);
@@ -68,9 +114,9 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
         }
     }
 
-    // Remove transactions that were included in the block from pending_transactions
+    // Remove selected transactions from pending_transactions (by transaction id)
     std::set<string> included_ids;
-    for (const auto& tx : new_block.getTransactions()) included_ids.insert(tx.getTransactionId());
+    for (const auto& tx : selected) included_ids.insert(tx.getTransactionId());
 
     std::vector<Transaction> remaining;
     remaining.reserve(pending_transactions.size());
@@ -84,6 +130,8 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
     // Print summary: balances updated and mempool change
     print_both("\nBalances updated for " + std::to_string(participants.size()) + " senders/receivers\n");
     print_both("Mempool size after block: " + std::to_string(prev_mempool) + " -> " + std::to_string(pending_transactions.size()) + "\n");
+    if (rejected_invalid_id > 0) print_both("Rejected invalid TX IDs: " + std::to_string(rejected_invalid_id) + "\n");
+    if (rejected_funds > 0) print_both("Rejected (insufficient funds): " + std::to_string(rejected_funds) + "\n");
 }
 
 bool Blockchain::isChainValid() const {

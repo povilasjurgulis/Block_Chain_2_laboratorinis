@@ -1,0 +1,956 @@
+-----------------------------------------
+Bloku grandiniu technologiju 2 laboratorinis:
+------------------------------------------
+
+STEP 1: User generation (around 1000 users)
+----------------------------------------
+Generated 1000 users in 0ms
+User Statistics:
+  Total Users: 1000
+  Total Balance: 511767454
+  Average Balance: 511767
+  Balance Range: 1426 - 999991
+First 5 users:
+User: User1 | Public Key: b07dac1e2c01f0cd... | Balance: 247846.000000
+User: User2 | Public Key: 9f4857bf924783fb... | Balance: 742565.000000
+User: User3 | Public Key: e75c7b6c7a82b261... | Balance: 747275.000000
+User: User4 | Public Key: d968b2684c7b96b5... | Balance: 985608.000000
+User: User5 | Public Key: 0cef356e9281046e... | Balance: 257503.000000
+
+STEP 2: Transaction generation (around 10000 transactions)
+----------------------------------------
+Transaction Statistics:
+  Total Transactions: 10000
+  Total Volume: 503314
+  Average Amount: 50
+  Unique Participants: 1000
+First 10 transactions:
+TX ID: 385ba8a2e0d90f63... | From: 87885e9e... -> To: 5aa23e66... | Amount: 53.174650
+TX ID: bd5b50edf0c2893e... | From: 3306d197... -> To: 46f62197... | Amount: 1.886103
+TX ID: 8ddeb8e714ccb350... | From: 5bf60f77... -> To: 00276774... | Amount: 58.822078
+TX ID: e14e3a47b237f47c... | From: 1b86fe55... -> To: 88706a7c... | Amount: 12.687634
+TX ID: 67364f30f5e4ba71... | From: ebb564c9... -> To: 93c9b584... | Amount: 78.556578
+TX ID: 96d89642be8f6eec... | From: 4143ca56... -> To: e2ae3bae... | Amount: 84.636695
+TX ID: 8b192c5a782359bd... | From: c7eb1d7d... -> To: 3be785a8... | Amount: 35.347417
+TX ID: 0805ddfca2717dc4... | From: 91480179... -> To: 932656df... | Amount: 93.412565
+TX ID: ec786c5882fd20bd... | From: d1b63b68... -> To: 384c19cd... | Amount: 72.566122
+TX ID: 912101d961363164... | From: 0073c98f... -> To: 22065f2d... | Amount: 68.305105
+
+STEPS 3-5: Blockchain process
+----------------------------------------
+Header Preview:
+  Prev Hash: 0...
+  Timestamp: 2025-11-04T20:01:06Z
+  TxRoot: ed4ee098c388...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 279943
+  Block Hash: 0000003dc2a5d844d534...
+
+Blockchain Configuration:
+- Difficulty Target: 6 leading zeros
+- Max Transactions per Block: 100
+- Mining Reward: 50.000000
+- Total Transactions to Process: 10000
+
+
+--- MINING BLOCK #1 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000003dc2a5...
+  Timestamp: 2025-11-04T20:01:07Z
+  TxRoot: e2aa419080f2...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 17913311
+  Block Hash: 000000f7eb73b106837a...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 12514ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner1 received reward: 50.000000
+
+--- MINING BLOCK #2 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000f7eb73...
+  Timestamp: 2025-11-04T20:01:19Z
+  TxRoot: a87e09489838...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 23619826
+  Block Hash: 000000fcc3b131b7d780...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 16316ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner2 received reward: 50.000000
+
+--- MINING BLOCK #3 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000fcc3b1...
+  Timestamp: 2025-11-04T20:01:35Z
+  TxRoot: 7ccb2a75b3d8...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 7981689
+  Block Hash: 0000004f32ba7611f979...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 5340ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner3 received reward: 50.000000
+
+--- MINING BLOCK #4 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000004f32ba...
+  Timestamp: 2025-11-04T20:01:41Z
+  TxRoot: 614da68ebb17...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 1074460
+  Block Hash: 000000399ee0649f3623...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 725ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner4 received reward: 50.000000
+
+--- MINING BLOCK #5 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000399ee0...
+  Timestamp: 2025-11-04T20:01:41Z
+  TxRoot: 39b4a36bb2c9...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 866236
+  Block Hash: 0000009854a084aa9003...
+
+Balances updated for 180 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 582ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner5 received reward: 50.000000
+
+--- MINING BLOCK #6 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000009854a0...
+  Timestamp: 2025-11-04T20:01:42Z
+  TxRoot: 726fae77c354...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 26478032
+  Block Hash: 00000013be685d5508f2...
+
+Balances updated for 183 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 18257ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner6 received reward: 50.000000
+
+--- MINING BLOCK #7 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 00000013be68...
+  Timestamp: 2025-11-04T20:02:00Z
+  TxRoot: c73bfcb600c8...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 292356
+  Block Hash: 000000f7f0f86cfd4b58...
+
+Balances updated for 180 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 200ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner7 received reward: 50.000000
+
+--- MINING BLOCK #8 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000f7f0f8...
+  Timestamp: 2025-11-04T20:02:01Z
+  TxRoot: a8c16b241879...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 10067220
+  Block Hash: 000000c7f3967d58248f...
+
+Balances updated for 177 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 6732ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner8 received reward: 50.000000
+
+--- MINING BLOCK #9 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000c7f396...
+  Timestamp: 2025-11-04T20:02:07Z
+  TxRoot: 456c183ad18d...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 11055710
+  Block Hash: 000000b8c1ff6903d2ea...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 7425ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner9 received reward: 50.000000
+
+--- MINING BLOCK #10 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000b8c1ff...
+  Timestamp: 2025-11-04T20:02:15Z
+  TxRoot: 5442ee88681f...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 19359214
+  Block Hash: 0000009f62b06dedd53e...
+
+Balances updated for 179 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 13033ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner10 received reward: 50.000000
+
+--- MINING BLOCK #11 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000009f62b0...
+  Timestamp: 2025-11-04T20:02:28Z
+  TxRoot: e8c165f94c80...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 9398148
+  Block Hash: 0000009bab67112c5bed...
+
+Balances updated for 173 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 6337ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner11 received reward: 50.000000
+
+--- MINING BLOCK #12 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000009bab67...
+  Timestamp: 2025-11-04T20:02:34Z
+  TxRoot: 7b177f51aada...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 5053674
+  Block Hash: 0000009524bd2ef91eef...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 3400ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner12 received reward: 50.000000
+
+--- MINING BLOCK #13 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000009524bd...
+  Timestamp: 2025-11-04T20:02:37Z
+  TxRoot: 2a6d27b772fe...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 11099962
+  Block Hash: 000000274c96e56334aa...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 7471ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner13 received reward: 50.000000
+
+--- MINING BLOCK #14 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000274c96...
+  Timestamp: 2025-11-04T20:02:45Z
+  TxRoot: 1d3eaf64060a...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 43362807
+  Block Hash: 000000fade3b3468efb3...
+
+Balances updated for 174 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 29602ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner14 received reward: 50.000000
+
+--- MINING BLOCK #15 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000fade3b...
+  Timestamp: 2025-11-04T20:03:15Z
+  TxRoot: 425f8a481f35...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 6958012
+  Block Hash: 000000818d05c3ca11e0...
+
+Balances updated for 179 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 4834ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner15 received reward: 50.000000
+
+--- MINING BLOCK #16 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000818d05...
+  Timestamp: 2025-11-04T20:03:19Z
+  TxRoot: c65c82f17365...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 11086777
+  Block Hash: 000000a76d534e759138...
+
+Balances updated for 185 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 7577ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner16 received reward: 50.000000
+
+--- MINING BLOCK #17 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000a76d53...
+  Timestamp: 2025-11-04T20:03:27Z
+  TxRoot: 472e7604c961...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 5826135
+  Block Hash: 00000007560ad519b1fc...
+
+Balances updated for 183 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 4001ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner17 received reward: 50.000000
+
+--- MINING BLOCK #18 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 00000007560a...
+  Timestamp: 2025-11-04T20:03:31Z
+  TxRoot: f9f9b42b5032...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 18658326
+  Block Hash: 000000b572cdb1f9874c...
+
+Balances updated for 181 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 13041ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner18 received reward: 50.000000
+
+--- MINING BLOCK #19 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000b572cd...
+  Timestamp: 2025-11-04T20:03:44Z
+  TxRoot: 71c6e2708154...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 16837195
+  Block Hash: 0000009347a60591b664...
+
+Balances updated for 184 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 11688ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner19 received reward: 50.000000
+
+--- MINING BLOCK #20 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000009347a6...
+  Timestamp: 2025-11-04T20:03:56Z
+  TxRoot: ce3fce17d3e9...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 16853690
+  Block Hash: 0000004b25268dfaeb5c...
+
+Balances updated for 184 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 14114ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner20 received reward: 50.000000
+
+--- MINING BLOCK #21 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000004b2526...
+  Timestamp: 2025-11-04T20:04:10Z
+  TxRoot: e3e18359608a...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 12308124
+  Block Hash: 0000006d56d0b0b63a7d...
+
+Balances updated for 185 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 8354ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner21 received reward: 50.000000
+
+--- MINING BLOCK #22 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000006d56d0...
+  Timestamp: 2025-11-04T20:04:18Z
+  TxRoot: 46cc11c582b1...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 26915238
+  Block Hash: 0000005a70973519a494...
+
+Balances updated for 185 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 18392ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner22 received reward: 50.000000
+
+--- MINING BLOCK #23 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000005a7097...
+  Timestamp: 2025-11-04T20:04:37Z
+  TxRoot: 213aa4769d94...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 11344464
+  Block Hash: 0000000ec2cad7c6c335...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 7972ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner23 received reward: 50.000000
+
+--- MINING BLOCK #24 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000000ec2ca...
+  Timestamp: 2025-11-04T20:04:45Z
+  TxRoot: 54cde4bf1f1a...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 14308626
+  Block Hash: 0000002867584c274e0f...
+
+Balances updated for 184 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 11955ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner24 received reward: 50.000000
+
+--- MINING BLOCK #25 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000286758...
+  Timestamp: 2025-11-04T20:04:57Z
+  TxRoot: bfbf121dacb6...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 325841
+  Block Hash: 00000040becc81d95fe5...
+
+Balances updated for 186 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 229ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner25 received reward: 50.000000
+
+--- MINING BLOCK #26 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 00000040becc...
+  Timestamp: 2025-11-04T20:04:57Z
+  TxRoot: 9a7f32d717cc...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 14300352
+  Block Hash: 0000005445fb0599e8ca...
+
+Balances updated for 187 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 9953ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner26 received reward: 50.000000
+
+--- MINING BLOCK #27 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000005445fb...
+  Timestamp: 2025-11-04T20:05:07Z
+  TxRoot: 34b3c2c5baf0...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 21538227
+  Block Hash: 000000657af236be805a...
+
+Balances updated for 186 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 14787ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner27 received reward: 50.000000
+
+--- MINING BLOCK #28 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000657af2...
+  Timestamp: 2025-11-04T20:05:21Z
+  TxRoot: 325a9f8741c2...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 10918470
+  Block Hash: 00000074c7168ec84364...
+
+Balances updated for 184 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 7423ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner28 received reward: 50.000000
+
+--- MINING BLOCK #29 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 00000074c716...
+  Timestamp: 2025-11-04T20:05:29Z
+  TxRoot: 81033b71185a...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 8263397
+  Block Hash: 000000268d99b06e746b...
+
+Balances updated for 186 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 5637ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner29 received reward: 50.000000
+
+--- MINING BLOCK #30 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000268d99...
+  Timestamp: 2025-11-04T20:05:35Z
+  TxRoot: 8cccd2b69f7e...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 3039686
+  Block Hash: 0000009629b7666a9a1e...
+
+Balances updated for 178 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 2098ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner30 received reward: 50.000000
+
+--- MINING BLOCK #31 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000009629b7...
+  Timestamp: 2025-11-04T20:05:37Z
+  TxRoot: 6853ca2d15df...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 13993650
+  Block Hash: 0000003d725d6f81a96e...
+
+Balances updated for 187 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 9451ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner31 received reward: 50.000000
+
+--- MINING BLOCK #32 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000003d725d...
+  Timestamp: 2025-11-04T20:05:46Z
+  TxRoot: 7800b621c533...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 21236027
+  Block Hash: 000000dfd26b83379ae6...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 14627ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner32 received reward: 50.000000
+
+--- MINING BLOCK #33 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000dfd26b...
+  Timestamp: 2025-11-04T20:06:01Z
+  TxRoot: 3955e05397a3...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 2194925
+  Block Hash: 000000e8c9b25b8665c6...
+
+Balances updated for 180 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 1532ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner33 received reward: 50.000000
+
+--- MINING BLOCK #34 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000e8c9b2...
+  Timestamp: 2025-11-04T20:06:02Z
+  TxRoot: e0d1a0bbfa18...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 13408239
+  Block Hash: 000000d95a6228559f33...
+
+Balances updated for 184 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 9156ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner34 received reward: 50.000000
+
+--- MINING BLOCK #35 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000d95a62...
+  Timestamp: 2025-11-04T20:06:11Z
+  TxRoot: fe23df89ca53...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 5376671
+  Block Hash: 000000211feffd24404c...
+
+Balances updated for 183 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 3662ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner35 received reward: 50.000000
+
+--- MINING BLOCK #36 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000211fef...
+  Timestamp: 2025-11-04T20:06:15Z
+  TxRoot: 27a1431bd9f0...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 5419382
+  Block Hash: 000000b2c5867ac8f630...
+
+Balances updated for 184 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 3657ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner36 received reward: 50.000000
+
+--- MINING BLOCK #37 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000b2c586...
+  Timestamp: 2025-11-04T20:06:19Z
+  TxRoot: c1e6932a4873...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 5706533
+  Block Hash: 00000058883321b2f7c8...
+
+Balances updated for 182 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 3924ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner37 received reward: 50.000000
+
+--- MINING BLOCK #38 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000588833...
+  Timestamp: 2025-11-04T20:06:23Z
+  TxRoot: f6da302dcaf7...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 15934175
+  Block Hash: 0000001b6b23cf69541a...
+
+Balances updated for 179 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 10935ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner38 received reward: 50.000000
+
+--- MINING BLOCK #39 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 0000001b6b23...
+  Timestamp: 2025-11-04T20:06:34Z
+  TxRoot: 6aa31efbe4f6...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 13021732
+  Block Hash: 000000694b9692c8b60d...
+
+Balances updated for 183 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 8805ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner39 received reward: 50.000000
+
+--- MINING BLOCK #40 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000694b96...
+  Timestamp: 2025-11-04T20:06:42Z
+  TxRoot: 2133382aa1f8...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 3274412
+  Block Hash: 000000b22ecdc371ebfd...
+
+Balances updated for 180 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 2227ms
+
+Step 5 - Validation:
+  Block validated and added to chain
+  Miner Miner40 received reward: 50.000000
+
+--- MINING BLOCK #41 ---
+Step 3 - Block Formation:
+  Selected 100 transactions from pool
+
+Step 4 - Mining (Proof-of-Work):
+Header Preview:
+  Prev Hash: 000000b22ecd...
+  Timestamp: 2025-11-04T20:06:45Z
+  TxRoot: 22043dc82c39...
+  Difficulty Target: 000000
+  Target: 000000...
+  Found Nonce: 7451487
+  Block Hash: 00000070dfc3953172b2...
+
+Balances updated for 185 senders/receivers
+Mempool size after block: 100 -> 0
+  Mining completed in 5068ms
+
+Step 5 - Validation:
+  Block validated and added to chain

@@ -9,30 +9,6 @@
 #include <string>
 #include <cstdint>
 
-// Transaction
-class Transaction {
-private:
-    std::string from_address;
-    std::string to_address;
-    double amount;
-    std::string transaction_id;
-    uint64_t timestamp;
-
-public:
-    Transaction();
-    Transaction(const std::string& from, const std::string& to, double amount);
-
-    std::string getFromAddress() const;
-    std::string getToAddress() const;
-    double getAmount() const;
-    std::string getTransactionId() const;
-    uint64_t getTimestamp() const;
-
-    std::string toString() const;
-    void generateTransactionId();
-    void displayTransaction() const;
-};
-
 // User
 class User {
 private:
@@ -67,6 +43,30 @@ public:
     static void initializeRandom();
     static std::vector<User> generateUsers(int user_count = 1000);
     static void displayUserStats(const std::vector<User>& users);
+};
+
+// Transaction
+class Transaction {
+private:
+    std::string from_address;
+    std::string to_address;
+    double amount;
+    std::string transaction_id;
+    uint64_t timestamp;
+
+public:
+    Transaction();
+    Transaction(const std::string& from, const std::string& to, double amount);
+
+    std::string getFromAddress() const;
+    std::string getToAddress() const;
+    double getAmount() const;
+    std::string getTransactionId() const;
+    uint64_t getTimestamp() const;
+
+    std::string toString() const;
+    void generateTransactionId();
+    void displayTransaction() const;
 };
 
 // TransactionGenerator
