@@ -86,10 +86,11 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
     // Create block from selected valid transactions
     Block new_block(getLatestBlock().getBlockHash(), selected, difficulty);
 
-    // Candidate/time-limited mining parameters (v0.2): try K candidates, each for timeLimitMs
+    // Candidate/time-limited mining parameters (v0.2): try K candidates per round, for timeLimitMs each
     const int CANDIDATES = 5;
-    const uint64_t TIME_LIMIT_MS = 5000; // 5 seconds per candidate
+    uint64_t timeLimitMs = 5000; // initial 5 seconds per candidate
     const uint64_t MAX_ATTEMPTS = 0xFFFFFFFFULL; // effectively unlimited per candidate except time
+    const int MAX_ROUNDS = 3; // how many rounds to retry, doubling time each round
 
     std::random_device rd;
     std::mt19937_64 rng(rd());
@@ -99,30 +100,39 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
     uint64_t foundAttempts = 0;
     uint64_t foundElapsed = 0;
 
-    for (int c = 0; c < CANDIDATES; ++c) {
-        Block candidate = new_block; // copy
-        uint64_t seed = seed_dist(rng);
-        candidate.setNonce(seed);
+    for (int round = 0; round < MAX_ROUNDS && !found; ++round) {
+        print_both("Candidate mining round " + std::to_string(round + 1) + ": time limit = " + std::to_string(timeLimitMs) + " ms per candidate\n");
+        for (int c = 0; c < CANDIDATES; ++c) {
+            Block candidate = new_block; // copy
+            uint64_t seed = seed_dist(rng);
+            candidate.setNonce(seed);
 
-        print_both("Attempting candidate " + std::to_string(c + 1) + " with start nonce " + std::to_string(seed) + "\n");
+            print_both(" Attempting candidate " + std::to_string(c + 1) + " with start nonce " + std::to_string(seed) + "\n");
 
-        uint64_t attemptsDone = 0;
-        uint64_t elapsedMs = 0;
-        bool ok = candidate.tryMineForDuration(TIME_LIMIT_MS, MAX_ATTEMPTS, attemptsDone, elapsedMs);
+            uint64_t attemptsDone = 0;
+            uint64_t elapsedMs = 0;
+            bool ok = candidate.tryMineForDuration(timeLimitMs, MAX_ATTEMPTS, attemptsDone, elapsedMs);
 
-        print_both("  Candidate " + std::to_string(c + 1) + " tried " + std::to_string(attemptsDone) + " attempts in " + std::to_string(elapsedMs) + "ms -> " + (ok ? string("FOUND") : string("NOT FOUND")) + "\n");
+            print_both("  Candidate " + std::to_string(c + 1) + " tried " + std::to_string(attemptsDone) + " attempts in " + std::to_string(elapsedMs) + "ms -> " + (ok ? string("FOUND") : string("NOT FOUND")) + "\n");
 
-        if (ok) {
-            found = true;
-            foundAttempts = attemptsDone;
-            foundElapsed = elapsedMs;
-            new_block = candidate; // use mined candidate
-            break;
+            if (ok) {
+                found = true;
+                foundAttempts = attemptsDone;
+                foundElapsed = elapsedMs;
+                new_block = candidate; // use mined candidate
+                break;
+            }
+        }
+
+        if (!found) {
+            // increase time limit and retry a new round (doubling)
+            timeLimitMs *= 2;
+            print_both(" No candidate found in round " + std::to_string(round + 1) + ". Increasing time limit and retrying...\n");
         }
     }
 
     if (!found) {
-        print_both("No candidate succeeded within time limits — falling back to full mining for this block (may take longer)\n");
+        print_both("No candidate succeeded after retries — falling back to full mining for this block (may take longer)\n");
         new_block.mineBlock();
     }
 

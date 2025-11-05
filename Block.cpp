@@ -137,6 +137,15 @@ bool Block::isValidBlock() const {
         return false;
     }
     
+    // Verify each transaction's ID (recompute and compare)
+    for (const auto& tx : transactions) {
+        std::string txdata = tx.toString();
+        std::string recomputed = hash_function(txdata);
+        if (recomputed != tx.getTransactionId()) {
+            return false;
+        }
+    }
+
     // Verify block hash
     string computed_hash = calculateBlockHash();
     if (computed_hash != block_hash) {

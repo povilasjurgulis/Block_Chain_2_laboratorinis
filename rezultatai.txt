@@ -7,45 +7,45 @@ STEP 1: User generation (around 1000 users)
 Generated 1000 users in 0ms
 User Statistics:
   Total Users: 1000
-  Total Balance: 506465111
-  Average Balance: 506465
-  Balance Range: 2128 - 997358
+  Total Balance: 504514299
+  Average Balance: 504514
+  Balance Range: 1605 - 999421
 First 5 users:
-User: User1 | Public Key: c41ed798e4a2e8fe... | Balance: 129302.000000
-User: User2 | Public Key: aeb73943b77e8c1f... | Balance: 193165.000000
-User: User3 | Public Key: 0dfea654a137ef0b... | Balance: 232153.000000
-User: User4 | Public Key: bdc620d6a6c1a71d... | Balance: 911700.000000
-User: User5 | Public Key: dadafe56ea733f0c... | Balance: 465488.000000
+User: User1 | Public Key: 45442e2b8422ce6f... | Balance: 79910.000000
+User: User2 | Public Key: d69f9654d31d33a1... | Balance: 488367.000000
+User: User3 | Public Key: f040f14226053d77... | Balance: 586782.000000
+User: User4 | Public Key: 471b0c67849eaa04... | Balance: 131200.000000
+User: User5 | Public Key: 3675dfb88402d193... | Balance: 186663.000000
 
 STEP 2: Transaction generation (around 10000 transactions)
 ----------------------------------------
 Transaction Statistics:
   Total Transactions: 10000
-  Total Volume: 508859
-  Average Amount: 50
+  Total Volume: 510030
+  Average Amount: 51
   Unique Participants: 1000
 First 10 transactions:
-TX ID: b53bec1d176939ed... | From: caa0e0ec... -> To: 868e55e5... | Amount: 37.967153
-TX ID: f2dd2976cace9215... | From: 0144d92b... -> To: 05068fba... | Amount: 92.025314
-TX ID: 2da84927146ff0cb... | From: 16a67863... -> To: 03b4be55... | Amount: 97.972976
-TX ID: e61116e9730c4ea0... | From: 5eb61a74... -> To: 8bcb7378... | Amount: 74.511657
-TX ID: b9550b710dddb427... | From: de8c2350... -> To: 090b0eb0... | Amount: 80.009684
-TX ID: 2f466c5ac22bb691... | From: 3d5f5d3b... -> To: f3302d84... | Amount: 17.071956
-TX ID: a0d48e26ef086219... | From: a819fb7f... -> To: 1396bfd6... | Amount: 92.525465
-TX ID: 2c89eb09be2de65f... | From: d5dc283f... -> To: 4a0b9be2... | Amount: 11.883187
-TX ID: d0021a0cbe97569e... | From: 9593c6b1... -> To: b008972d... | Amount: 73.550350
-TX ID: 24584a77230decc7... | From: bd6f5600... -> To: a912e460... | Amount: 8.618640
+TX ID: 6b7623e6f11c57af... | From: 3c49f1d4... -> To: 2f6e7245... | Amount: 94.358960
+TX ID: c8a2b9193741dfe2... | From: 35ad5905... -> To: 77942298... | Amount: 5.985253
+TX ID: b0e10ebd48356a50... | From: 39552392... -> To: 1f912d55... | Amount: 74.032642
+TX ID: 065edf9d4cf76077... | From: 320c9a92... -> To: e21d2c9a... | Amount: 23.936265
+TX ID: 1b0b773cb57ff476... | From: 9a23750f... -> To: 4805fc7a... | Amount: 80.977518
+TX ID: 319f73ec5e26f2fa... | From: eeb87578... -> To: 26e853c8... | Amount: 44.979406
+TX ID: 64fe32cb46ed36db... | From: 9c70a5b0... -> To: a7ddaf3a... | Amount: 99.227234
+TX ID: 8750fca8ecd1ca77... | From: 0bc68cf0... -> To: 9831a89e... | Amount: 51.256619
+TX ID: 46578d7943e218c4... | From: d86f3294... -> To: 202e39a3... | Amount: 45.657735
+TX ID: eac51280ce5ddae2... | From: bc143747... -> To: 92957db8... | Amount: 78.237831
 
 STEPS 3-5: Blockchain process
 ----------------------------------------
 Header Preview:
   Prev Hash: 0...
-  Timestamp: 2025-11-04T20:21:34Z
+  Timestamp: 2025-11-05T16:33:15Z
   TxRoot: ed4ee098c388...
   Difficulty Target: 00000
   Target: 00000...
-  Found Nonce: 378123
-  Block Hash: 00000f852ecfead687be...
+  Found Nonce: 120089
+  Block Hash: 00000bdc51c379bf0c82...
 
 Blockchain Configuration:
 - Difficulty Target: 5 leading zeros
@@ -59,12 +59,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5937062594345778898
-  Candidate 1 tried 2360403 attempts in 1814ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17808105451017175894
+  Candidate 1 tried 78615 attempts in 63ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1818ms
+  Mining completed in 68ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -75,12 +76,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 12379705709417674320
-  Candidate 1 tried 262415 attempts in 207ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9781758006342063541
+  Candidate 1 tried 418039 attempts in 330ms -> FOUND
 
-Balances updated for 179 senders/receivers
+Balances updated for 173 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 212ms
+  Mining completed in 335ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -91,12 +93,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17038409678385966420
-  Candidate 1 tried 555745 attempts in 423ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 1197998854544077306
+  Candidate 1 tried 3828922 attempts in 3078ms -> FOUND
 
 Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 427ms
+  Mining completed in 3084ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -107,12 +110,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17650814365520456020
-  Candidate 1 tried 2682832 attempts in 2108ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 18211552038868459394
+  Candidate 1 tried 4816053 attempts in 3881ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2112ms
+  Mining completed in 3887ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -123,12 +127,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5752398258213691011
-  Candidate 1 tried 1246138 attempts in 978ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 8076980188880257286
+  Candidate 1 tried 75567 attempts in 61ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 983ms
+  Mining completed in 65ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -139,12 +144,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5741375366700672276
-  Candidate 1 tried 681921 attempts in 530ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 10171385426958724629
+  Candidate 1 tried 414343 attempts in 326ms -> FOUND
 
-Balances updated for 184 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 536ms
+  Mining completed in 330ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -155,12 +161,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2271924581786929414
-  Candidate 1 tried 3017675 attempts in 2359ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 15857088747515126901
+  Candidate 1 tried 80116 attempts in 69ms -> FOUND
 
-Balances updated for 187 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2364ms
+  Mining completed in 74ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -171,12 +178,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13869771356919719865
-  Candidate 1 tried 1133701 attempts in 896ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 2760839281851170399
+  Candidate 1 tried 1297440 attempts in 1063ms -> FOUND
 
 Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 900ms
+  Mining completed in 1068ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -187,12 +195,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2114787744769174056
-  Candidate 1 tried 914604 attempts in 721ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17337185639374168801
+  Candidate 1 tried 843606 attempts in 676ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 177 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 727ms
+  Mining completed in 680ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -203,12 +212,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 1550532631639722733
-  Candidate 1 tried 748648 attempts in 584ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 18039732644675073513
+  Candidate 1 tried 1079122 attempts in 904ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 174 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 588ms
+  Mining completed in 912ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -219,12 +229,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17903827447387440922
-  Candidate 1 tried 558945 attempts in 438ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 7297597591464308471
+  Candidate 1 tried 675929 attempts in 597ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 177 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 443ms
+  Mining completed in 603ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -235,12 +246,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 6799963645573413088
-  Candidate 1 tried 640847 attempts in 509ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 12723761733389188649
+  Candidate 1 tried 3044293 attempts in 2888ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 514ms
+  Mining completed in 2893ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -251,12 +263,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3779464799045611499
-  Candidate 1 tried 591190 attempts in 455ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 12401488392938491989
+  Candidate 1 tried 84789 attempts in 72ms -> FOUND
 
-Balances updated for 179 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 460ms
+  Mining completed in 76ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -267,12 +280,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 18360536567667978555
-  Candidate 1 tried 58912 attempts in 47ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 13664434859787215788
+  Candidate 1 tried 1480129 attempts in 1365ms -> FOUND
 
-Balances updated for 177 senders/receivers
+Balances updated for 182 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 53ms
+  Mining completed in 1372ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -283,12 +297,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 8470752364286681628
-  Candidate 1 tried 1842079 attempts in 1486ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 18363222815670679959
+  Candidate 1 tried 212664 attempts in 185ms -> FOUND
 
-Balances updated for 183 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1490ms
+  Mining completed in 190ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -299,12 +314,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 7808004975327787800
-  Candidate 1 tried 486820 attempts in 375ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 13618590674151526377
+  Candidate 1 tried 338951 attempts in 302ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 381ms
+  Mining completed in 309ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -315,12 +331,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 16784671333361544898
-  Candidate 1 tried 24915 attempts in 19ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9799013034265881793
+  Candidate 1 tried 1037400 attempts in 930ms -> FOUND
 
-Balances updated for 188 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 23ms
+  Mining completed in 938ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -331,12 +348,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10781955949925969750
-  Candidate 1 tried 845512 attempts in 663ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 2432938663533723345
+  Candidate 1 tried 1074403 attempts in 983ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 667ms
+  Mining completed in 990ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -347,12 +365,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3352289146221542965
-  Candidate 1 tried 251063 attempts in 197ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9165664056579413034
+  Candidate 1 tried 1789542 attempts in 1688ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 201ms
+  Mining completed in 1693ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -363,12 +382,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 205188937710758911
-  Candidate 1 tried 1292304 attempts in 1010ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3358158546885697477
+  Candidate 1 tried 440711 attempts in 382ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 182 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1016ms
+  Mining completed in 388ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -379,12 +399,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10391535810223110593
-  Candidate 1 tried 3074272 attempts in 2388ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 7056402967280916755
+  Candidate 1 tried 3170141 attempts in 3002ms -> FOUND
 
 Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2392ms
+  Mining completed in 3008ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -395,12 +416,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2916841443944292488
-  Candidate 1 tried 1210888 attempts in 947ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 226993975122148899
+  Candidate 1 tried 870829 attempts in 769ms -> FOUND
 
 Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 954ms
+  Mining completed in 775ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -411,12 +433,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5057581321630928917
-  Candidate 1 tried 1210585 attempts in 949ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 1883797825764623603
+  Candidate 1 tried 47312 attempts in 47ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 177 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 955ms
+  Mining completed in 55ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -427,12 +450,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10501485122791723533
-  Candidate 1 tried 1350815 attempts in 1057ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 6317114860296479613
+  Candidate 1 tried 248452 attempts in 218ms -> FOUND
 
-Balances updated for 184 senders/receivers
+Balances updated for 192 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1061ms
+  Mining completed in 222ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -443,12 +467,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 15895656807817656317
-  Candidate 1 tried 556932 attempts in 441ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9567914272755219819
+  Candidate 1 tried 1395693 attempts in 1310ms -> FOUND
 
-Balances updated for 176 senders/receivers
+Balances updated for 182 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 446ms
+  Mining completed in 1315ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -459,12 +484,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17105475548140794329
-  Candidate 1 tried 876484 attempts in 698ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 8823387087539984011
+  Candidate 1 tried 780026 attempts in 791ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 703ms
+  Mining completed in 799ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -475,12 +501,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10562551321078062126
-  Candidate 1 tried 253491 attempts in 199ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 18274774497288273233
+  Candidate 1 tried 573628 attempts in 538ms -> FOUND
 
-Balances updated for 184 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 203ms
+  Mining completed in 545ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -491,12 +518,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17116725541901043810
-  Candidate 1 tried 1517803 attempts in 1196ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 7816981740586137919
+  Candidate 1 tried 944174 attempts in 924ms -> FOUND
 
-Balances updated for 179 senders/receivers
+Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1201ms
+  Mining completed in 929ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -507,12 +535,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 9474440879798290931
-  Candidate 1 tried 470364 attempts in 365ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 8525643536199989747
+  Candidate 1 tried 186593 attempts in 161ms -> FOUND
 
-Balances updated for 185 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 370ms
+  Mining completed in 167ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -523,12 +552,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 120750441346568726
-  Candidate 1 tried 3598468 attempts in 2809ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17451758549781264925
+  Candidate 1 tried 3500511 attempts in 3390ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2814ms
+  Mining completed in 3398ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -539,12 +569,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 16856560293063819742
-  Candidate 1 tried 580324 attempts in 449ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 2535085492793727208
+  Candidate 1 tried 670405 attempts in 643ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 453ms
+  Mining completed in 650ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -555,12 +586,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3752865838155027304
-  Candidate 1 tried 211084 attempts in 159ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 2846867015116831981
+  Candidate 1 tried 304750 attempts in 279ms -> FOUND
 
-Balances updated for 188 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 164ms
+  Mining completed in 284ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -571,12 +603,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10543339606379704563
-  Candidate 1 tried 2358932 attempts in 1856ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 13601257283852173126
+  Candidate 1 tried 3175199 attempts in 2616ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 177 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1862ms
+  Mining completed in 2620ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -587,12 +620,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 11554655586655324791
-  Candidate 1 tried 485880 attempts in 385ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14727354005044653824
+  Candidate 1 tried 287249 attempts in 226ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 389ms
+  Mining completed in 230ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -603,12 +637,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3185024108386723118
-  Candidate 1 tried 1133036 attempts in 877ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17874043748629046491
+  Candidate 1 tried 977698 attempts in 771ms -> FOUND
 
-Balances updated for 183 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 882ms
+  Mining completed in 776ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -619,12 +654,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2114242381831874479
-  Candidate 1 tried 1541246 attempts in 1178ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3114126593574041750
+  Candidate 1 tried 823014 attempts in 635ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1182ms
+  Mining completed in 640ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -635,12 +671,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2097200782950218272
-  Candidate 1 tried 30397 attempts in 23ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17292035633637859929
+  Candidate 1 tried 805018 attempts in 607ms -> FOUND
 
-Balances updated for 189 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 27ms
+  Mining completed in 612ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -651,12 +688,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2138281321322690178
-  Candidate 1 tried 1649656 attempts in 1277ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14004908822847013214
+  Candidate 1 tried 786570 attempts in 607ms -> FOUND
 
-Balances updated for 186 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1281ms
+  Mining completed in 611ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -667,12 +705,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10997111360697090337
-  Candidate 1 tried 1049294 attempts in 812ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 1033044965944570066
+  Candidate 1 tried 46043 attempts in 38ms -> FOUND
 
 Balances updated for 182 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 816ms
+  Mining completed in 43ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -683,12 +722,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 6910861169635613329
-  Candidate 1 tried 1740636 attempts in 1330ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 15707682798269374796
+  Candidate 1 tried 212890 attempts in 162ms -> FOUND
 
-Balances updated for 173 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1334ms
+  Mining completed in 166ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -699,12 +739,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3743642121988710162
-  Candidate 1 tried 2307107 attempts in 1778ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 7826630439878192626
+  Candidate 1 tried 75951 attempts in 56ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1782ms
+  Mining completed in 60ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -715,12 +756,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 11089580319878167024
-  Candidate 1 tried 337191 attempts in 263ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 12099989473774637813
+  Candidate 1 tried 1959115 attempts in 1655ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 269ms
+  Mining completed in 1661ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -731,12 +773,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5204413565219660783
-  Candidate 1 tried 5007335 attempts in 3922ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 16418151227298437120
+  Candidate 1 tried 968553 attempts in 831ms -> FOUND
 
-Balances updated for 175 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 3928ms
+  Mining completed in 836ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -747,12 +790,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5324625769854584148
-  Candidate 1 tried 59837 attempts in 47ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17205333450023365764
+  Candidate 1 tried 1471687 attempts in 1114ms -> FOUND
 
 Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 52ms
+  Mining completed in 1119ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -763,12 +807,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10558694558760013003
-  Candidate 1 tried 15536 attempts in 12ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 5259401720285573441
+  Candidate 1 tried 580101 attempts in 439ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 16ms
+  Mining completed in 443ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -779,12 +824,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13363278735702572676
-  Candidate 1 tried 483633 attempts in 375ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 5282902864867477006
+  Candidate 1 tried 11791 attempts in 9ms -> FOUND
 
-Balances updated for 177 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 380ms
+  Mining completed in 14ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -795,12 +841,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2286991457999685157
-  Candidate 1 tried 608194 attempts in 469ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3621774550534123866
+  Candidate 1 tried 1086856 attempts in 833ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 473ms
+  Mining completed in 838ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -811,12 +858,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 961058013526572658
-  Candidate 1 tried 31533 attempts in 24ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 15216608276053751299
+  Candidate 1 tried 903287 attempts in 726ms -> FOUND
 
-Balances updated for 186 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 28ms
+  Mining completed in 731ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -827,12 +875,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2636076694823762130
-  Candidate 1 tried 4395 attempts in 3ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 1146720238775684806
+  Candidate 1 tried 115446 attempts in 89ms -> FOUND
 
-Balances updated for 174 senders/receivers
+Balances updated for 173 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 7ms
+  Mining completed in 95ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -843,12 +892,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 6704383248440379078
-  Candidate 1 tried 155095 attempts in 120ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 12116972506498933612
+  Candidate 1 tried 707651 attempts in 551ms -> FOUND
 
-Balances updated for 183 senders/receivers
+Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 124ms
+  Mining completed in 563ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -859,12 +909,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10095189416475303663
-  Candidate 1 tried 236032 attempts in 184ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 15948090594664084474
+  Candidate 1 tried 678540 attempts in 518ms -> FOUND
 
-Balances updated for 183 senders/receivers
+Balances updated for 169 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 189ms
+  Mining completed in 522ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -875,12 +926,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 80950476537313195
-  Candidate 1 tried 1636925 attempts in 1241ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 12239699930490718596
+  Candidate 1 tried 265662 attempts in 210ms -> FOUND
 
-Balances updated for 175 senders/receivers
+Balances updated for 177 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1246ms
+  Mining completed in 214ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -891,12 +943,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 131961355475288857
-  Candidate 1 tried 1312273 attempts in 1024ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 4849942934558890730
+  Candidate 1 tried 1297646 attempts in 1007ms -> FOUND
 
-Balances updated for 174 senders/receivers
+Balances updated for 191 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1029ms
+  Mining completed in 1011ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -907,12 +960,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5662909782546417553
-  Candidate 1 tried 4418295 attempts in 3387ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17023607226457025765
+  Candidate 1 tried 1080243 attempts in 832ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 3392ms
+  Mining completed in 836ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -923,12 +977,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10699059885451204051
-  Candidate 1 tried 743577 attempts in 567ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14669109357857184080
+  Candidate 1 tried 5991 attempts in 6ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 172 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 571ms
+  Mining completed in 10ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -939,12 +994,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 8957015843794499191
-  Candidate 1 tried 840473 attempts in 645ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 17651287032802769134
+  Candidate 1 tried 234054 attempts in 183ms -> FOUND
 
-Balances updated for 184 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 649ms
+  Mining completed in 187ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -955,12 +1011,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 14746597440148120202
-  Candidate 1 tried 607642 attempts in 463ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 1249646547270330805
+  Candidate 1 tried 320916 attempts in 252ms -> FOUND
 
-Balances updated for 185 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 467ms
+  Mining completed in 257ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -971,12 +1028,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 7094746783968532624
-  Candidate 1 tried 1865473 attempts in 1442ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 4481734567262379436
+  Candidate 1 tried 2445300 attempts in 1854ms -> FOUND
 
-Balances updated for 176 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1446ms
+  Mining completed in 1858ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -987,12 +1045,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 11941633779574398876
-  Candidate 1 tried 2320271 attempts in 1804ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 4014561651207194287
+  Candidate 1 tried 2129417 attempts in 1620ms -> FOUND
 
-Balances updated for 173 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1808ms
+  Mining completed in 1625ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1003,12 +1062,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 6815211435659241368
-  Candidate 1 tried 33334 attempts in 26ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3514115395251308362
+  Candidate 1 tried 344840 attempts in 274ms -> FOUND
 
 Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 30ms
+  Mining completed in 279ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1019,12 +1079,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13274948773935621996
-  Candidate 1 tried 175998 attempts in 137ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 10887634985539394730
+  Candidate 1 tried 822484 attempts in 644ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 142ms
+  Mining completed in 649ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1035,12 +1096,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 7136795334180359181
-  Candidate 1 tried 3667530 attempts in 2851ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14078635416901247094
+  Candidate 1 tried 1692834 attempts in 1353ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2856ms
+  Mining completed in 1357ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1051,12 +1113,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3547423777669849400
-  Candidate 1 tried 1084356 attempts in 829ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 1291296735361125852
+  Candidate 1 tried 2917088 attempts in 2302ms -> FOUND
 
-Balances updated for 184 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 833ms
+  Mining completed in 2306ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1067,12 +1130,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 4097871975175671575
-  Candidate 1 tried 1860667 attempts in 1419ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 13097341442943193784
+  Candidate 1 tried 1400337 attempts in 1079ms -> FOUND
 
-Balances updated for 184 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1424ms
+  Mining completed in 1083ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1083,12 +1147,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 6729182856626136489
-  Candidate 1 tried 3057046 attempts in 2329ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3601138577759513448
+  Candidate 1 tried 1891979 attempts in 1458ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 188 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2335ms
+  Mining completed in 1462ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1099,12 +1164,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 8663927544297995201
-  Candidate 1 tried 5678519 attempts in 4396ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 616341870599240058
+  Candidate 1 tried 467103 attempts in 371ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 4401ms
+  Mining completed in 375ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1115,12 +1181,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10456599918178724309
-  Candidate 1 tried 666290 attempts in 509ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 16542186900461624050
+  Candidate 1 tried 1235611 attempts in 974ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 513ms
+  Mining completed in 978ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1131,12 +1198,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 9765820850622310073
-  Candidate 1 tried 2646748 attempts in 2025ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14737823226221184263
+  Candidate 1 tried 1572523 attempts in 1214ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2030ms
+  Mining completed in 1218ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1147,12 +1215,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 15200140327438976810
-  Candidate 1 tried 629171 attempts in 484ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 16592449254441983032
+  Candidate 1 tried 726391 attempts in 563ms -> FOUND
 
-Balances updated for 183 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 488ms
+  Mining completed in 568ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1163,12 +1232,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13407240761399704550
-  Candidate 1 tried 4977451 attempts in 3826ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 917653118339923991
+  Candidate 1 tried 697053 attempts in 536ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 171 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 3831ms
+  Mining completed in 541ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1179,12 +1249,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17154138938564688069
-  Candidate 1 tried 872507 attempts in 677ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 6234763944460456709
+  Candidate 1 tried 479574 attempts in 363ms -> FOUND
 
-Balances updated for 185 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 681ms
+  Mining completed in 367ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1195,12 +1266,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 8080994238944567403
-  Candidate 1 tried 70545 attempts in 54ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 8860064757930607630
+  Candidate 1 tried 157859 attempts in 130ms -> FOUND
 
-Balances updated for 183 senders/receivers
+Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 59ms
+  Mining completed in 135ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1211,12 +1283,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 16405648798690012514
-  Candidate 1 tried 1286599 attempts in 1009ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 7506716081250274044
+  Candidate 1 tried 588733 attempts in 456ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1013ms
+  Mining completed in 460ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1227,12 +1300,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 4270186346821948241
-  Candidate 1 tried 1709864 attempts in 1415ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 437799339487300715
+  Candidate 1 tried 916752 attempts in 707ms -> FOUND
 
-Balances updated for 178 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1419ms
+  Mining completed in 711ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1243,12 +1317,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 2191661843308108254
-  Candidate 1 tried 56191 attempts in 43ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9782941920790384172
+  Candidate 1 tried 2073425 attempts in 1580ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 187 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 49ms
+  Mining completed in 1585ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1259,12 +1334,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 961180067286661397
-  Candidate 1 tried 543914 attempts in 419ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 11064408186512840344
+  Candidate 1 tried 155063 attempts in 127ms -> FOUND
 
-Balances updated for 189 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 424ms
+  Mining completed in 132ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1275,12 +1351,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3597245418573053518
-  Candidate 1 tried 197565 attempts in 150ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 4740943037487480233
+  Candidate 1 tried 1659017 attempts in 1269ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 155ms
+  Mining completed in 1273ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1291,12 +1368,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 18338913323494451994
-  Candidate 1 tried 1440578 attempts in 1111ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 15872284902867897537
+  Candidate 1 tried 496540 attempts in 387ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 180 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1116ms
+  Mining completed in 392ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1307,12 +1385,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 11807418822913546392
-  Candidate 1 tried 305276 attempts in 234ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 16459395383626342192
+  Candidate 1 tried 862540 attempts in 672ms -> FOUND
 
 Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 238ms
+  Mining completed in 676ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1323,12 +1402,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17573441577412909673
-  Candidate 1 tried 494912 attempts in 381ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 6884741820731466053
+  Candidate 1 tried 549557 attempts in 431ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 386ms
+  Mining completed in 435ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1339,12 +1419,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 63388787366894040
-  Candidate 1 tried 1733171 attempts in 1320ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 6742625232886298821
+  Candidate 1 tried 494921 attempts in 388ms -> FOUND
 
 Balances updated for 187 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1325ms
+  Mining completed in 394ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1355,12 +1436,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 15109558924975137731
-  Candidate 1 tried 1425046 attempts in 1293ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 349958023226880585
+  Candidate 1 tried 894068 attempts in 694ms -> FOUND
 
-Balances updated for 175 senders/receivers
+Balances updated for 178 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1300ms
+  Mining completed in 698ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1371,12 +1453,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13075612699076156917
-  Candidate 1 tried 1520226 attempts in 1508ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 10341971916885495390
+  Candidate 1 tried 794277 attempts in 626ms -> FOUND
 
-Balances updated for 179 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1513ms
+  Mining completed in 631ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1387,12 +1470,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 8189412628893951109
-  Candidate 1 tried 901755 attempts in 889ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 2277133320820497375
+  Candidate 1 tried 124079 attempts in 102ms -> FOUND
 
-Balances updated for 182 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 894ms
+  Mining completed in 106ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1403,12 +1487,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 15496159580631508619
-  Candidate 1 tried 1735946 attempts in 1959ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9370929403214562752
+  Candidate 1 tried 1778849 attempts in 1383ms -> FOUND
 
-Balances updated for 191 senders/receivers
+Balances updated for 176 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1964ms
+  Mining completed in 1388ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1419,12 +1504,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13939920635435570476
-  Candidate 1 tried 185458 attempts in 217ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 2089209911344382441
+  Candidate 1 tried 18180 attempts in 16ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 227ms
+  Mining completed in 21ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1435,12 +1521,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 12056957918634712545
-  Candidate 1 tried 1386146 attempts in 1459ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 18062940184839401913
+  Candidate 1 tried 861342 attempts in 659ms -> FOUND
 
-Balances updated for 187 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1465ms
+  Mining completed in 664ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1451,12 +1538,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 13481942197529330376
-  Candidate 1 tried 423262 attempts in 438ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 8758505625705219773
+  Candidate 1 tried 619776 attempts in 481ms -> FOUND
 
-Balances updated for 185 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 443ms
+  Mining completed in 486ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1467,12 +1555,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5352233309715339068
-  Candidate 1 tried 788797 attempts in 823ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 12521928705252180239
+  Candidate 1 tried 1107911 attempts in 866ms -> FOUND
 
-Balances updated for 187 senders/receivers
+Balances updated for 186 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 828ms
+  Mining completed in 871ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1483,12 +1572,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 17829257848641461025
-  Candidate 1 tried 48469 attempts in 43ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 9169124279718800815
+  Candidate 1 tried 1099654 attempts in 863ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 48ms
+  Mining completed in 867ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1499,12 +1589,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3007241032920523300
-  Candidate 1 tried 559290 attempts in 568ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 97666259356578775
+  Candidate 1 tried 487536 attempts in 374ms -> FOUND
 
-Balances updated for 187 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 576ms
+  Mining completed in 378ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1515,12 +1606,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 9571480924833330195
-  Candidate 1 tried 472589 attempts in 473ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3177349225871685543
+  Candidate 1 tried 174922 attempts in 133ms -> FOUND
 
-Balances updated for 177 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 480ms
+  Mining completed in 138ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1531,12 +1623,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 11171324088025893577
-  Candidate 1 tried 3139232 attempts in 2564ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 4251730881008375829
+  Candidate 1 tried 303760 attempts in 234ms -> FOUND
 
-Balances updated for 180 senders/receivers
+Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 2568ms
+  Mining completed in 238ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1547,12 +1640,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 11382097876233928883
-  Candidate 1 tried 331231 attempts in 256ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14658669933666436648
+  Candidate 1 tried 181878 attempts in 140ms -> FOUND
 
-Balances updated for 185 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 261ms
+  Mining completed in 145ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1563,12 +1657,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10564381066069676385
-  Candidate 1 tried 11307 attempts in 8ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 11098455276188939211
+  Candidate 1 tried 547028 attempts in 436ms -> FOUND
 
-Balances updated for 179 senders/receivers
+Balances updated for 187 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 12ms
+  Mining completed in 441ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1579,12 +1674,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 10136058796458275448
-  Candidate 1 tried 1967516 attempts in 1506ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 14167237496345788477
+  Candidate 1 tried 125630 attempts in 94ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 183 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1510ms
+  Mining completed in 99ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1595,12 +1691,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 3047176870592541839
-  Candidate 1 tried 300758 attempts in 233ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 8528092951361444000
+  Candidate 1 tried 488569 attempts in 372ms -> FOUND
 
 Balances updated for 184 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 238ms
+  Mining completed in 378ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1611,12 +1708,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 16981919898411873735
-  Candidate 1 tried 736524 attempts in 564ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 16664107019076460461
+  Candidate 1 tried 215020 attempts in 164ms -> FOUND
 
-Balances updated for 181 senders/receivers
+Balances updated for 185 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 569ms
+  Mining completed in 169ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1627,12 +1725,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 4055038262307299460
-  Candidate 1 tried 1622905 attempts in 1253ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 3117777786968545838
+  Candidate 1 tried 13603 attempts in 13ms -> FOUND
 
-Balances updated for 176 senders/receivers
+Balances updated for 179 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 1257ms
+  Mining completed in 17ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1643,12 +1742,13 @@ Step 3 - Block Formation:
   Selected 100 transactions from pool
 
 Step 4 - Mining (Proof-of-Work):
-Attempting candidate 1 with start nonce 5672568115451789051
-  Candidate 1 tried 1063103 attempts in 821ms -> FOUND
+Candidate mining round 1: time limit = 5000 ms per candidate
+ Attempting candidate 1 with start nonce 16933566248216785599
+  Candidate 1 tried 1848611 attempts in 1479ms -> FOUND
 
-Balances updated for 179 senders/receivers
+Balances updated for 181 senders/receivers
 Mempool size after block: 100 -> 0
-  Mining completed in 825ms
+  Mining completed in 1483ms
 
 Step 5 - Validation:
   Block validated and added to chain
@@ -1771,711 +1871,711 @@ Mining reward: 50.000000
 Pending transactions: 0
 
 Block #0 (Genesis):
-  Hash: 00000f852ecfead6...
+  Hash: 00000bdc51c379bf...
   Prev: 0...
   Tx Count: 0
-  Nonce: 378123
-  Timestamp: 2025-11-04T20:21:34Z
+  Nonce: 120089
+  Timestamp: 2025-11-05T16:33:15Z
 
 Block #1:
-  Hash: 00000a61400b101d...
-  Prev: 00000f852ecfead6...
+  Hash: 00000ea2bffc57b6...
+  Prev: 00000bdc51c379bf...
   Tx Count: 101
-  Nonce: 5937062594348139301
-  Timestamp: 2025-11-04T20:21:34Z
+  Nonce: 17808105451017254509
+  Timestamp: 2025-11-05T16:33:15Z
 
 Block #2:
-  Hash: 00000b57c187e650...
-  Prev: 00000a61400b101d...
+  Hash: 0000045d2ebc9b90...
+  Prev: 00000ea2bffc57b6...
   Tx Count: 101
-  Nonce: 12379705709417936735
-  Timestamp: 2025-11-04T20:21:36Z
+  Nonce: 9781758006342481580
+  Timestamp: 2025-11-05T16:33:15Z
 
 Block #3:
-  Hash: 00000b322777f4cc...
-  Prev: 00000b57c187e650...
+  Hash: 000002ce4c3f0915...
+  Prev: 0000045d2ebc9b90...
   Tx Count: 101
-  Nonce: 17038409678386522165
-  Timestamp: 2025-11-04T20:21:36Z
+  Nonce: 1197998854547906228
+  Timestamp: 2025-11-05T16:33:16Z
 
 Block #4:
-  Hash: 00000bb0a4b929a6...
-  Prev: 00000b322777f4cc...
+  Hash: 000009d693e84a2b...
+  Prev: 000002ce4c3f0915...
   Tx Count: 101
-  Nonce: 17650814365523138852
-  Timestamp: 2025-11-04T20:21:37Z
+  Nonce: 18211552038873275447
+  Timestamp: 2025-11-05T16:33:19Z
 
 Block #5:
-  Hash: 00000521955782dc...
-  Prev: 00000bb0a4b929a6...
+  Hash: 00000d7dbc23f762...
+  Prev: 000009d693e84a2b...
   Tx Count: 101
-  Nonce: 5752398258214937149
-  Timestamp: 2025-11-04T20:21:39Z
+  Nonce: 8076980188880332853
+  Timestamp: 2025-11-05T16:33:23Z
 
 Block #6:
-  Hash: 00000427f73bb04c...
-  Prev: 00000521955782dc...
+  Hash: 00000c5f8d0503ff...
+  Prev: 00000d7dbc23f762...
   Tx Count: 101
-  Nonce: 5741375366701354197
-  Timestamp: 2025-11-04T20:21:40Z
+  Nonce: 10171385426959138972
+  Timestamp: 2025-11-05T16:33:23Z
 
 Block #7:
-  Hash: 00000cafa5112e74...
-  Prev: 00000427f73bb04c...
+  Hash: 000004cc5e4fa2f8...
+  Prev: 00000c5f8d0503ff...
   Tx Count: 101
-  Nonce: 2271924581789947089
-  Timestamp: 2025-11-04T20:21:41Z
+  Nonce: 15857088747515207017
+  Timestamp: 2025-11-05T16:33:23Z
 
 Block #8:
-  Hash: 000009bd90395ee1...
-  Prev: 00000cafa5112e74...
+  Hash: 000006f81d866da0...
+  Prev: 000004cc5e4fa2f8...
   Tx Count: 101
-  Nonce: 13869771356920853566
-  Timestamp: 2025-11-04T20:21:43Z
+  Nonce: 2760839281852467839
+  Timestamp: 2025-11-05T16:33:23Z
 
 Block #9:
-  Hash: 000006840349ba51...
-  Prev: 000009bd90395ee1...
+  Hash: 000008850a609302...
+  Prev: 000006f81d866da0...
   Tx Count: 101
-  Nonce: 2114787744770088660
-  Timestamp: 2025-11-04T20:21:44Z
+  Nonce: 17337185639375012407
+  Timestamp: 2025-11-05T16:33:24Z
 
 Block #10:
-  Hash: 000002170ed1afc5...
-  Prev: 000006840349ba51...
+  Hash: 00000cd123207f69...
+  Prev: 000008850a609302...
   Tx Count: 101
-  Nonce: 1550532631640471381
-  Timestamp: 2025-11-04T20:21:45Z
+  Nonce: 18039732644676152635
+  Timestamp: 2025-11-05T16:33:25Z
 
 Block #11:
-  Hash: 00000a0f01e6e6e7...
-  Prev: 000002170ed1afc5...
+  Hash: 00000d41a9c3b6f0...
+  Prev: 00000cd123207f69...
   Tx Count: 101
-  Nonce: 17903827447387999867
-  Timestamp: 2025-11-04T20:21:45Z
+  Nonce: 7297597591464984400
+  Timestamp: 2025-11-05T16:33:26Z
 
 Block #12:
-  Hash: 00000c27b2fd1ef9...
-  Prev: 00000a0f01e6e6e7...
+  Hash: 0000078aae905b6c...
+  Prev: 00000d41a9c3b6f0...
   Tx Count: 101
-  Nonce: 6799963645574053935
-  Timestamp: 2025-11-04T20:21:46Z
+  Nonce: 12723761733392232942
+  Timestamp: 2025-11-05T16:33:26Z
 
 Block #13:
-  Hash: 0000073891d44391...
-  Prev: 00000c27b2fd1ef9...
+  Hash: 00000687a4a313fc...
+  Prev: 0000078aae905b6c...
   Tx Count: 101
-  Nonce: 3779464799046202689
-  Timestamp: 2025-11-04T20:21:46Z
+  Nonce: 12401488392938576778
+  Timestamp: 2025-11-05T16:33:29Z
 
 Block #14:
-  Hash: 00000862da376051...
-  Prev: 0000073891d44391...
+  Hash: 00000d667fcbed12...
+  Prev: 00000687a4a313fc...
   Tx Count: 101
-  Nonce: 18360536567668037467
-  Timestamp: 2025-11-04T20:21:47Z
+  Nonce: 13664434859788695917
+  Timestamp: 2025-11-05T16:33:29Z
 
 Block #15:
-  Hash: 000001884a132638...
-  Prev: 00000862da376051...
+  Hash: 0000064d394d3983...
+  Prev: 00000d667fcbed12...
   Tx Count: 101
-  Nonce: 8470752364288523707
-  Timestamp: 2025-11-04T20:21:47Z
+  Nonce: 18363222815670892623
+  Timestamp: 2025-11-05T16:33:31Z
 
 Block #16:
-  Hash: 000005733b6014da...
-  Prev: 000001884a132638...
+  Hash: 00000eb652db19e6...
+  Prev: 0000064d394d3983...
   Tx Count: 101
-  Nonce: 7808004975328274620
-  Timestamp: 2025-11-04T20:21:48Z
+  Nonce: 13618590674151865328
+  Timestamp: 2025-11-05T16:33:31Z
 
 Block #17:
-  Hash: 00000514d69012a7...
-  Prev: 000005733b6014da...
+  Hash: 00000f4c55be8333...
+  Prev: 00000eb652db19e6...
   Tx Count: 101
-  Nonce: 16784671333361569813
-  Timestamp: 2025-11-04T20:21:48Z
+  Nonce: 9799013034266919193
+  Timestamp: 2025-11-05T16:33:31Z
 
 Block #18:
-  Hash: 000000321d98d5a0...
-  Prev: 00000514d69012a7...
+  Hash: 00000bf72efeaadf...
+  Prev: 00000f4c55be8333...
   Tx Count: 101
-  Nonce: 10781955949926815262
-  Timestamp: 2025-11-04T20:21:49Z
+  Nonce: 2432938663534797748
+  Timestamp: 2025-11-05T16:33:32Z
 
 Block #19:
-  Hash: 00000117dfb407ad...
-  Prev: 000000321d98d5a0...
+  Hash: 0000059a9f836f1b...
+  Prev: 00000bf72efeaadf...
   Tx Count: 101
-  Nonce: 3352289146221794028
-  Timestamp: 2025-11-04T20:21:49Z
+  Nonce: 9165664056581202576
+  Timestamp: 2025-11-05T16:33:33Z
 
 Block #20:
-  Hash: 000009e7e255a857...
-  Prev: 00000117dfb407ad...
+  Hash: 000001473c5701de...
+  Prev: 0000059a9f836f1b...
   Tx Count: 101
-  Nonce: 205188937712051215
-  Timestamp: 2025-11-04T20:21:49Z
+  Nonce: 3358158546886138188
+  Timestamp: 2025-11-05T16:33:35Z
 
 Block #21:
-  Hash: 0000013d112be9b7...
-  Prev: 000009e7e255a857...
+  Hash: 00000b4e935497a4...
+  Prev: 000001473c5701de...
   Tx Count: 101
-  Nonce: 10391535810226184865
-  Timestamp: 2025-11-04T20:21:50Z
+  Nonce: 7056402967284086896
+  Timestamp: 2025-11-05T16:33:35Z
 
 Block #22:
-  Hash: 0000013da03362ec...
-  Prev: 0000013d112be9b7...
+  Hash: 00000ab3936e5a02...
+  Prev: 00000b4e935497a4...
   Tx Count: 101
-  Nonce: 2916841443945503376
-  Timestamp: 2025-11-04T20:21:53Z
+  Nonce: 226993975123019728
+  Timestamp: 2025-11-05T16:33:38Z
 
 Block #23:
-  Hash: 00000b7417209b78...
-  Prev: 0000013da03362ec...
+  Hash: 000002787167c799...
+  Prev: 00000ab3936e5a02...
   Tx Count: 101
-  Nonce: 5057581321632139502
-  Timestamp: 2025-11-04T20:21:54Z
+  Nonce: 1883797825764670915
+  Timestamp: 2025-11-05T16:33:39Z
 
 Block #24:
-  Hash: 00000a99597184ea...
-  Prev: 00000b7417209b78...
+  Hash: 0000062d2bfda7f3...
+  Prev: 000002787167c799...
   Tx Count: 101
-  Nonce: 10501485122793074348
-  Timestamp: 2025-11-04T20:21:55Z
+  Nonce: 6317114860296728065
+  Timestamp: 2025-11-05T16:33:39Z
 
 Block #25:
-  Hash: 0000035eb3094c25...
-  Prev: 00000a99597184ea...
+  Hash: 000000c5ad15a781...
+  Prev: 0000062d2bfda7f3...
   Tx Count: 101
-  Nonce: 15895656807818213249
-  Timestamp: 2025-11-04T20:21:56Z
+  Nonce: 9567914272756615512
+  Timestamp: 2025-11-05T16:33:39Z
 
 Block #26:
-  Hash: 000003cafb94f0fd...
-  Prev: 0000035eb3094c25...
+  Hash: 00000ecaef21c351...
+  Prev: 000000c5ad15a781...
   Tx Count: 101
-  Nonce: 17105475548141670813
-  Timestamp: 2025-11-04T20:21:56Z
+  Nonce: 8823387087540764037
+  Timestamp: 2025-11-05T16:33:41Z
 
 Block #27:
-  Hash: 00000cfa30635225...
-  Prev: 000003cafb94f0fd...
+  Hash: 0000051e66cc7462...
+  Prev: 00000ecaef21c351...
   Tx Count: 101
-  Nonce: 10562551321078315617
-  Timestamp: 2025-11-04T20:21:57Z
+  Nonce: 18274774497288846861
+  Timestamp: 2025-11-05T16:33:42Z
 
 Block #28:
-  Hash: 00000a9a3dc58fa4...
-  Prev: 00000cfa30635225...
+  Hash: 00000da87875c8d2...
+  Prev: 0000051e66cc7462...
   Tx Count: 101
-  Nonce: 17116725541902561613
-  Timestamp: 2025-11-04T20:21:57Z
+  Nonce: 7816981740587082093
+  Timestamp: 2025-11-05T16:33:42Z
 
 Block #29:
-  Hash: 000004b11c5ddf0b...
-  Prev: 00000a9a3dc58fa4...
+  Hash: 000004ccef6b86a9...
+  Prev: 00000da87875c8d2...
   Tx Count: 101
-  Nonce: 9474440879798761295
-  Timestamp: 2025-11-04T20:21:58Z
+  Nonce: 8525643536200176340
+  Timestamp: 2025-11-05T16:33:43Z
 
 Block #30:
-  Hash: 00000d0a9cc36e0a...
-  Prev: 000004b11c5ddf0b...
+  Hash: 000004df5dc0061c...
+  Prev: 000004ccef6b86a9...
   Tx Count: 101
-  Nonce: 120750441350167194
-  Timestamp: 2025-11-04T20:21:59Z
+  Nonce: 17451758549784765436
+  Timestamp: 2025-11-05T16:33:43Z
 
 Block #31:
-  Hash: 00000344a4535065...
-  Prev: 00000d0a9cc36e0a...
+  Hash: 00000706bd977628...
+  Prev: 000004df5dc0061c...
   Tx Count: 101
-  Nonce: 16856560293064400066
-  Timestamp: 2025-11-04T20:22:02Z
+  Nonce: 2535085492794397613
+  Timestamp: 2025-11-05T16:33:47Z
 
 Block #32:
-  Hash: 000005fd73378668...
-  Prev: 00000344a4535065...
+  Hash: 0000046ffdca0003...
+  Prev: 00000706bd977628...
   Tx Count: 101
-  Nonce: 3752865838155238388
-  Timestamp: 2025-11-04T20:22:02Z
+  Nonce: 2846867015117136731
+  Timestamp: 2025-11-05T16:33:47Z
 
 Block #33:
-  Hash: 000002c40e55eed0...
-  Prev: 000005fd73378668...
+  Hash: 00000a7591f4222a...
+  Prev: 0000046ffdca0003...
   Tx Count: 101
-  Nonce: 10543339606382063495
-  Timestamp: 2025-11-04T20:22:02Z
+  Nonce: 13601257283855348325
+  Timestamp: 2025-11-05T16:33:48Z
 
 Block #34:
-  Hash: 0000039ab80b7443...
-  Prev: 000002c40e55eed0...
+  Hash: 00000290de326a99...
+  Prev: 00000a7591f4222a...
   Tx Count: 101
-  Nonce: 11554655586655810671
-  Timestamp: 2025-11-04T20:22:04Z
+  Nonce: 14727354005044941073
+  Timestamp: 2025-11-05T16:33:50Z
 
 Block #35:
-  Hash: 000008ae2b33fb4c...
-  Prev: 0000039ab80b7443...
+  Hash: 000006521dd07465...
+  Prev: 00000290de326a99...
   Tx Count: 101
-  Nonce: 3185024108387856154
-  Timestamp: 2025-11-04T20:22:04Z
+  Nonce: 17874043748630024189
+  Timestamp: 2025-11-05T16:33:50Z
 
 Block #36:
-  Hash: 00000625a93e7c44...
-  Prev: 000008ae2b33fb4c...
+  Hash: 00000898efea8868...
+  Prev: 000006521dd07465...
   Tx Count: 101
-  Nonce: 2114242381833415725
-  Timestamp: 2025-11-04T20:22:05Z
+  Nonce: 3114126593574864764
+  Timestamp: 2025-11-05T16:33:51Z
 
 Block #37:
-  Hash: 00000be32756d0c3...
-  Prev: 00000625a93e7c44...
+  Hash: 0000087bba275576...
+  Prev: 00000898efea8868...
   Tx Count: 101
-  Nonce: 2097200782950248669
-  Timestamp: 2025-11-04T20:22:06Z
+  Nonce: 17292035633638664947
+  Timestamp: 2025-11-05T16:33:52Z
 
 Block #38:
-  Hash: 00000394e886d5ca...
-  Prev: 00000be32756d0c3...
+  Hash: 000000c9214bba01...
+  Prev: 0000087bba275576...
   Tx Count: 101
-  Nonce: 2138281321324339834
-  Timestamp: 2025-11-04T20:22:07Z
+  Nonce: 14004908822847799784
+  Timestamp: 2025-11-05T16:33:52Z
 
 Block #39:
-  Hash: 000006c6b51ab764...
-  Prev: 00000394e886d5ca...
+  Hash: 000009fbe2ed2983...
+  Prev: 000000c9214bba01...
   Tx Count: 101
-  Nonce: 10997111360698139631
-  Timestamp: 2025-11-04T20:22:08Z
+  Nonce: 1033044965944616109
+  Timestamp: 2025-11-05T16:33:53Z
 
 Block #40:
-  Hash: 000005d3fa070f4f...
-  Prev: 000006c6b51ab764...
+  Hash: 000002e8f648f502...
+  Prev: 000009fbe2ed2983...
   Tx Count: 101
-  Nonce: 6910861169637353965
-  Timestamp: 2025-11-04T20:22:09Z
+  Nonce: 15707682798269587686
+  Timestamp: 2025-11-05T16:33:53Z
 
 Block #41:
-  Hash: 00000919b7765361...
-  Prev: 000005d3fa070f4f...
+  Hash: 00000821c85aae17...
+  Prev: 000002e8f648f502...
   Tx Count: 101
-  Nonce: 3743642121991017269
-  Timestamp: 2025-11-04T20:22:10Z
+  Nonce: 7826630439878268577
+  Timestamp: 2025-11-05T16:33:53Z
 
 Block #42:
-  Hash: 00000a639227106f...
-  Prev: 00000919b7765361...
+  Hash: 00000f37d5927b5c...
+  Prev: 00000821c85aae17...
   Tx Count: 101
-  Nonce: 11089580319878504215
-  Timestamp: 2025-11-04T20:22:12Z
+  Nonce: 12099989473776596928
+  Timestamp: 2025-11-05T16:33:53Z
 
 Block #43:
-  Hash: 00000ff4f2b5abea...
-  Prev: 00000a639227106f...
+  Hash: 00000d301980a8de...
+  Prev: 00000f37d5927b5c...
   Tx Count: 101
-  Nonce: 5204413565224668118
-  Timestamp: 2025-11-04T20:22:12Z
+  Nonce: 16418151227299405673
+  Timestamp: 2025-11-05T16:33:55Z
 
 Block #44:
-  Hash: 000000f649b381c9...
-  Prev: 00000ff4f2b5abea...
+  Hash: 00000365b965e519...
+  Prev: 00000d301980a8de...
   Tx Count: 101
-  Nonce: 5324625769854643985
-  Timestamp: 2025-11-04T20:22:16Z
+  Nonce: 17205333450024837451
+  Timestamp: 2025-11-05T16:33:56Z
 
 Block #45:
-  Hash: 000003e56e180de3...
-  Prev: 000000f649b381c9...
+  Hash: 000004b9a1140cd3...
+  Prev: 00000365b965e519...
   Tx Count: 101
-  Nonce: 10558694558760028539
-  Timestamp: 2025-11-04T20:22:16Z
+  Nonce: 5259401720286153542
+  Timestamp: 2025-11-05T16:33:57Z
 
 Block #46:
-  Hash: 0000069e3803c706...
-  Prev: 000003e56e180de3...
+  Hash: 0000092a8d05b737...
+  Prev: 000004b9a1140cd3...
   Tx Count: 101
-  Nonce: 13363278735703056309
-  Timestamp: 2025-11-04T20:22:16Z
+  Nonce: 5282902864867488797
+  Timestamp: 2025-11-05T16:33:58Z
 
 Block #47:
-  Hash: 000005d5d89d7373...
-  Prev: 0000069e3803c706...
+  Hash: 0000099422b6054f...
+  Prev: 0000092a8d05b737...
   Tx Count: 101
-  Nonce: 2286991458000293351
-  Timestamp: 2025-11-04T20:22:16Z
+  Nonce: 3621774550535210722
+  Timestamp: 2025-11-05T16:33:58Z
 
 Block #48:
-  Hash: 000009ca1d1b4243...
-  Prev: 000005d5d89d7373...
+  Hash: 00000f60029bbb4a...
+  Prev: 0000099422b6054f...
   Tx Count: 101
-  Nonce: 961058013526604191
-  Timestamp: 2025-11-04T20:22:17Z
+  Nonce: 15216608276054654586
+  Timestamp: 2025-11-05T16:33:58Z
 
 Block #49:
-  Hash: 0000095c89324389...
-  Prev: 000009ca1d1b4243...
+  Hash: 000005a6e8d9d0b5...
+  Prev: 00000f60029bbb4a...
   Tx Count: 101
-  Nonce: 2636076694823766525
-  Timestamp: 2025-11-04T20:22:17Z
+  Nonce: 1146720238775800252
+  Timestamp: 2025-11-05T16:33:59Z
 
 Block #50:
-  Hash: 000002d9245ad641...
-  Prev: 0000095c89324389...
+  Hash: 000003d1ebd8d792...
+  Prev: 000005a6e8d9d0b5...
   Tx Count: 101
-  Nonce: 6704383248440534173
-  Timestamp: 2025-11-04T20:22:17Z
+  Nonce: 12116972506499641263
+  Timestamp: 2025-11-05T16:33:59Z
 
 Block #51:
-  Hash: 0000017def98df6e...
-  Prev: 000002d9245ad641...
+  Hash: 000005bd8f9f1cbb...
+  Prev: 000003d1ebd8d792...
   Tx Count: 101
-  Nonce: 10095189416475539695
-  Timestamp: 2025-11-04T20:22:17Z
+  Nonce: 15948090594664763014
+  Timestamp: 2025-11-05T16:34:00Z
 
 Block #52:
-  Hash: 00000e8c802b09e7...
-  Prev: 0000017def98df6e...
+  Hash: 00000f390b57d566...
+  Prev: 000005bd8f9f1cbb...
   Tx Count: 101
-  Nonce: 80950476538950120
-  Timestamp: 2025-11-04T20:22:17Z
+  Nonce: 12239699930490984258
+  Timestamp: 2025-11-05T16:34:00Z
 
 Block #53:
-  Hash: 000008d1eb875b7f...
-  Prev: 00000e8c802b09e7...
+  Hash: 000006fa1cdf9d97...
+  Prev: 00000f390b57d566...
   Tx Count: 101
-  Nonce: 131961355476601130
-  Timestamp: 2025-11-04T20:22:19Z
+  Nonce: 4849942934560188376
+  Timestamp: 2025-11-05T16:34:01Z
 
 Block #54:
-  Hash: 00000251d1c4f6dd...
-  Prev: 000008d1eb875b7f...
+  Hash: 000005169feef43c...
+  Prev: 000006fa1cdf9d97...
   Tx Count: 101
-  Nonce: 5662909782550835848
-  Timestamp: 2025-11-04T20:22:20Z
+  Nonce: 17023607226458106008
+  Timestamp: 2025-11-05T16:34:02Z
 
 Block #55:
-  Hash: 0000072aec310598...
-  Prev: 00000251d1c4f6dd...
+  Hash: 00000db1321dfadc...
+  Prev: 000005169feef43c...
   Tx Count: 101
-  Nonce: 10699059885451947628
-  Timestamp: 2025-11-04T20:22:23Z
+  Nonce: 14669109357857190071
+  Timestamp: 2025-11-05T16:34:02Z
 
 Block #56:
-  Hash: 000006ffe809626a...
-  Prev: 0000072aec310598...
+  Hash: 0000093cbe0f8320...
+  Prev: 00000db1321dfadc...
   Tx Count: 101
-  Nonce: 8957015843795339664
-  Timestamp: 2025-11-04T20:22:24Z
+  Nonce: 17651287032803003188
+  Timestamp: 2025-11-05T16:34:02Z
 
 Block #57:
-  Hash: 00000b3342bf42a6...
-  Prev: 000006ffe809626a...
+  Hash: 00000f6b78cc7a85...
+  Prev: 0000093cbe0f8320...
   Tx Count: 101
-  Nonce: 14746597440148727844
-  Timestamp: 2025-11-04T20:22:24Z
+  Nonce: 1249646547270651721
+  Timestamp: 2025-11-05T16:34:03Z
 
 Block #58:
-  Hash: 00000e472efb3c8f...
-  Prev: 00000b3342bf42a6...
+  Hash: 00000a13d9e8d54f...
+  Prev: 00000f6b78cc7a85...
   Tx Count: 101
-  Nonce: 7094746783970398097
-  Timestamp: 2025-11-04T20:22:25Z
+  Nonce: 4481734567264824736
+  Timestamp: 2025-11-05T16:34:03Z
 
 Block #59:
-  Hash: 00000031cf97bf46...
-  Prev: 00000e472efb3c8f...
+  Hash: 00000066d780fd9d...
+  Prev: 00000a13d9e8d54f...
   Tx Count: 101
-  Nonce: 11941633779576719147
-  Timestamp: 2025-11-04T20:22:26Z
+  Nonce: 4014561651209323704
+  Timestamp: 2025-11-05T16:34:05Z
 
 Block #60:
-  Hash: 000009320761057d...
-  Prev: 00000031cf97bf46...
+  Hash: 000005f080d275d3...
+  Prev: 00000066d780fd9d...
   Tx Count: 101
-  Nonce: 6815211435659274702
-  Timestamp: 2025-11-04T20:22:28Z
+  Nonce: 3514115395251653202
+  Timestamp: 2025-11-05T16:34:06Z
 
 Block #61:
-  Hash: 000005e28df0a856...
-  Prev: 000009320761057d...
+  Hash: 0000035d27b41d74...
+  Prev: 000005f080d275d3...
   Tx Count: 101
-  Nonce: 13274948773935797994
-  Timestamp: 2025-11-04T20:22:28Z
+  Nonce: 10887634985540217214
+  Timestamp: 2025-11-05T16:34:07Z
 
 Block #62:
-  Hash: 0000088e0ebf42b9...
-  Prev: 000005e28df0a856...
+  Hash: 00000a8223a046fe...
+  Prev: 0000035d27b41d74...
   Tx Count: 101
-  Nonce: 7136795334184026711
-  Timestamp: 2025-11-04T20:22:28Z
+  Nonce: 14078635416902939928
+  Timestamp: 2025-11-05T16:34:07Z
 
 Block #63:
-  Hash: 00000310e06a4cdd...
-  Prev: 0000088e0ebf42b9...
+  Hash: 00000ff7f1bbb923...
+  Prev: 00000a8223a046fe...
   Tx Count: 101
-  Nonce: 3547423777670933756
-  Timestamp: 2025-11-04T20:22:31Z
+  Nonce: 1291296735364042940
+  Timestamp: 2025-11-05T16:34:09Z
 
 Block #64:
-  Hash: 000004358056cde3...
-  Prev: 00000310e06a4cdd...
+  Hash: 000007e87bd0b8e2...
+  Prev: 00000ff7f1bbb923...
   Tx Count: 101
-  Nonce: 4097871975177532242
-  Timestamp: 2025-11-04T20:22:32Z
+  Nonce: 13097341442944594121
+  Timestamp: 2025-11-05T16:34:11Z
 
 Block #65:
-  Hash: 00000d6f799794bd...
-  Prev: 000004358056cde3...
+  Hash: 0000014dee2838c5...
+  Prev: 000007e87bd0b8e2...
   Tx Count: 101
-  Nonce: 6729182856629193535
-  Timestamp: 2025-11-04T20:22:33Z
+  Nonce: 3601138577761405427
+  Timestamp: 2025-11-05T16:34:12Z
 
 Block #66:
-  Hash: 00000e5539f5dd95...
-  Prev: 00000d6f799794bd...
+  Hash: 000004ae7d2f0d2d...
+  Prev: 0000014dee2838c5...
   Tx Count: 101
-  Nonce: 8663927544303673720
-  Timestamp: 2025-11-04T20:22:36Z
+  Nonce: 616341870599707161
+  Timestamp: 2025-11-05T16:34:14Z
 
 Block #67:
-  Hash: 000001b76427b0f1...
-  Prev: 00000e5539f5dd95...
+  Hash: 000004b4ac26f552...
+  Prev: 000004ae7d2f0d2d...
   Tx Count: 101
-  Nonce: 10456599918179390599
-  Timestamp: 2025-11-04T20:22:40Z
+  Nonce: 16542186900462859661
+  Timestamp: 2025-11-05T16:34:14Z
 
 Block #68:
-  Hash: 0000078a41963c40...
-  Prev: 000001b76427b0f1...
+  Hash: 00000c6864cffe1b...
+  Prev: 000004b4ac26f552...
   Tx Count: 101
-  Nonce: 9765820850624956821
-  Timestamp: 2025-11-04T20:22:41Z
+  Nonce: 14737823226222756786
+  Timestamp: 2025-11-05T16:34:15Z
 
 Block #69:
-  Hash: 0000056d18f760d1...
-  Prev: 0000078a41963c40...
+  Hash: 000005b7eae52c6b...
+  Prev: 00000c6864cffe1b...
   Tx Count: 101
-  Nonce: 15200140327439605981
-  Timestamp: 2025-11-04T20:22:43Z
+  Nonce: 16592449254442709423
+  Timestamp: 2025-11-05T16:34:16Z
 
 Block #70:
-  Hash: 00000f2c5c4d884f...
-  Prev: 0000056d18f760d1...
+  Hash: 00000313d144753a...
+  Prev: 000005b7eae52c6b...
   Tx Count: 101
-  Nonce: 13407240761404682001
-  Timestamp: 2025-11-04T20:22:43Z
+  Nonce: 917653118340621044
+  Timestamp: 2025-11-05T16:34:17Z
 
 Block #71:
-  Hash: 00000749cfdc509e...
-  Prev: 00000f2c5c4d884f...
+  Hash: 0000007777bc50d1...
+  Prev: 00000313d144753a...
   Tx Count: 101
-  Nonce: 17154138938565560576
-  Timestamp: 2025-11-04T20:22:47Z
+  Nonce: 6234763944460936283
+  Timestamp: 2025-11-05T16:34:17Z
 
 Block #72:
-  Hash: 000001e22442a3fd...
-  Prev: 00000749cfdc509e...
+  Hash: 000008a629ca050f...
+  Prev: 0000007777bc50d1...
   Tx Count: 101
-  Nonce: 8080994238944637948
-  Timestamp: 2025-11-04T20:22:48Z
+  Nonce: 8860064757930765489
+  Timestamp: 2025-11-05T16:34:18Z
 
 Block #73:
-  Hash: 00000949035b8878...
-  Prev: 000001e22442a3fd...
+  Hash: 000006782ecb8124...
+  Prev: 000008a629ca050f...
   Tx Count: 101
-  Nonce: 16405648798691299113
-  Timestamp: 2025-11-04T20:22:48Z
+  Nonce: 7506716081250862777
+  Timestamp: 2025-11-05T16:34:18Z
 
 Block #74:
-  Hash: 000004f0aaf5a23d...
-  Prev: 00000949035b8878...
+  Hash: 00000d1ee114af8f...
+  Prev: 000006782ecb8124...
   Tx Count: 101
-  Nonce: 4270186346823658105
-  Timestamp: 2025-11-04T20:22:49Z
+  Nonce: 437799339488217467
+  Timestamp: 2025-11-05T16:34:18Z
 
 Block #75:
-  Hash: 0000026aafc181d8...
-  Prev: 000004f0aaf5a23d...
+  Hash: 000009bd3c0224ca...
+  Prev: 00000d1ee114af8f...
   Tx Count: 101
-  Nonce: 2191661843308164445
-  Timestamp: 2025-11-04T20:22:50Z
+  Nonce: 9782941920792457597
+  Timestamp: 2025-11-05T16:34:19Z
 
 Block #76:
-  Hash: 000005cd12979bf4...
-  Prev: 0000026aafc181d8...
+  Hash: 000001776f7aefdd...
+  Prev: 000009bd3c0224ca...
   Tx Count: 101
-  Nonce: 961180067287205311
-  Timestamp: 2025-11-04T20:22:50Z
+  Nonce: 11064408186512995407
+  Timestamp: 2025-11-05T16:34:21Z
 
 Block #77:
-  Hash: 00000b484e0c478f...
-  Prev: 000005cd12979bf4...
+  Hash: 0000010ca49e7492...
+  Prev: 000001776f7aefdd...
   Tx Count: 101
-  Nonce: 3597245418573251083
-  Timestamp: 2025-11-04T20:22:51Z
+  Nonce: 4740943037489139250
+  Timestamp: 2025-11-05T16:34:21Z
 
 Block #78:
-  Hash: 0000039465a22cd7...
-  Prev: 00000b484e0c478f...
+  Hash: 00000c80c2523037...
+  Prev: 0000010ca49e7492...
   Tx Count: 101
-  Nonce: 18338913323495892572
-  Timestamp: 2025-11-04T20:22:51Z
+  Nonce: 15872284902868394077
+  Timestamp: 2025-11-05T16:34:22Z
 
 Block #79:
-  Hash: 0000082c9a0aaec8...
-  Prev: 0000039465a22cd7...
+  Hash: 0000091077853a86...
+  Prev: 00000c80c2523037...
   Tx Count: 101
-  Nonce: 11807418822913851668
-  Timestamp: 2025-11-04T20:22:52Z
+  Nonce: 16459395383627204732
+  Timestamp: 2025-11-05T16:34:23Z
 
 Block #80:
-  Hash: 000002ee851fdd42...
-  Prev: 0000082c9a0aaec8...
+  Hash: 0000047d679e3a29...
+  Prev: 0000091077853a86...
   Tx Count: 101
-  Nonce: 17573441577413404585
-  Timestamp: 2025-11-04T20:22:52Z
+  Nonce: 6884741820732015610
+  Timestamp: 2025-11-05T16:34:23Z
 
 Block #81:
-  Hash: 00000a88ae7e4765...
-  Prev: 000002ee851fdd42...
+  Hash: 000004c1ce63ed46...
+  Prev: 0000047d679e3a29...
   Tx Count: 101
-  Nonce: 63388787368627211
-  Timestamp: 2025-11-04T20:22:52Z
+  Nonce: 6742625232886793742
+  Timestamp: 2025-11-05T16:34:24Z
 
 Block #82:
-  Hash: 00000101a3e19de1...
-  Prev: 00000a88ae7e4765...
+  Hash: 0000018f69152417...
+  Prev: 000004c1ce63ed46...
   Tx Count: 101
-  Nonce: 15109558924976562777
-  Timestamp: 2025-11-04T20:22:54Z
+  Nonce: 349958023227774653
+  Timestamp: 2025-11-05T16:34:24Z
 
 Block #83:
-  Hash: 00000db759c14bcd...
-  Prev: 00000101a3e19de1...
+  Hash: 00000765c668ba6c...
+  Prev: 0000018f69152417...
   Tx Count: 101
-  Nonce: 13075612699077677143
-  Timestamp: 2025-11-04T20:22:55Z
+  Nonce: 10341971916886289667
+  Timestamp: 2025-11-05T16:34:25Z
 
 Block #84:
-  Hash: 000004ee7796ef92...
-  Prev: 00000db759c14bcd...
+  Hash: 0000080594a643ec...
+  Prev: 00000765c668ba6c...
   Tx Count: 101
-  Nonce: 8189412628894852864
-  Timestamp: 2025-11-04T20:22:57Z
+  Nonce: 2277133320820621454
+  Timestamp: 2025-11-05T16:34:26Z
 
 Block #85:
-  Hash: 000001a3fbd51d28...
-  Prev: 000004ee7796ef92...
+  Hash: 0000075a34fa40ae...
+  Prev: 0000080594a643ec...
   Tx Count: 101
-  Nonce: 15496159580633244565
-  Timestamp: 2025-11-04T20:22:58Z
+  Nonce: 9370929403216341601
+  Timestamp: 2025-11-05T16:34:26Z
 
 Block #86:
-  Hash: 000004bc3d839a27...
-  Prev: 000001a3fbd51d28...
+  Hash: 0000086fe5903c18...
+  Prev: 0000075a34fa40ae...
   Tx Count: 101
-  Nonce: 13939920635435755934
-  Timestamp: 2025-11-04T20:23:00Z
+  Nonce: 2089209911344400621
+  Timestamp: 2025-11-05T16:34:27Z
 
 Block #87:
-  Hash: 000006fc1378cc09...
-  Prev: 000004bc3d839a27...
+  Hash: 000003c8fc60e9b1...
+  Prev: 0000086fe5903c18...
   Tx Count: 101
-  Nonce: 12056957918636098691
-  Timestamp: 2025-11-04T20:23:00Z
+  Nonce: 18062940184840263255
+  Timestamp: 2025-11-05T16:34:27Z
 
 Block #88:
-  Hash: 00000b8d32ffdc6a...
-  Prev: 000006fc1378cc09...
+  Hash: 000008d7fbf80d3e...
+  Prev: 000003c8fc60e9b1...
   Tx Count: 101
-  Nonce: 13481942197529753638
-  Timestamp: 2025-11-04T20:23:01Z
+  Nonce: 8758505625705839549
+  Timestamp: 2025-11-05T16:34:28Z
 
 Block #89:
-  Hash: 000007bc8e26bbc4...
-  Prev: 00000b8d32ffdc6a...
+  Hash: 00000ee7ac132f9c...
+  Prev: 000008d7fbf80d3e...
   Tx Count: 101
-  Nonce: 5352233309716127865
-  Timestamp: 2025-11-04T20:23:02Z
+  Nonce: 12521928705253288150
+  Timestamp: 2025-11-05T16:34:28Z
 
 Block #90:
-  Hash: 00000d79603c1be9...
-  Prev: 000007bc8e26bbc4...
+  Hash: 000007b355cceea4...
+  Prev: 00000ee7ac132f9c...
   Tx Count: 101
-  Nonce: 17829257848641509494
-  Timestamp: 2025-11-04T20:23:03Z
+  Nonce: 9169124279719900469
+  Timestamp: 2025-11-05T16:34:29Z
 
 Block #91:
-  Hash: 00000f879cd9b0f6...
-  Prev: 00000d79603c1be9...
+  Hash: 00000f78da9fa6a6...
+  Prev: 000007b355cceea4...
   Tx Count: 101
-  Nonce: 3007241032921082590
-  Timestamp: 2025-11-04T20:23:03Z
+  Nonce: 97666259357066311
+  Timestamp: 2025-11-05T16:34:30Z
 
 Block #92:
-  Hash: 00000d755b6646ef...
-  Prev: 00000f879cd9b0f6...
+  Hash: 000001c204ee25ef...
+  Prev: 00000f78da9fa6a6...
   Tx Count: 101
-  Nonce: 9571480924833802784
-  Timestamp: 2025-11-04T20:23:03Z
+  Nonce: 3177349225871860465
+  Timestamp: 2025-11-05T16:34:30Z
 
 Block #93:
-  Hash: 0000028315226acb...
-  Prev: 00000d755b6646ef...
+  Hash: 0000073825a03e90...
+  Prev: 000001c204ee25ef...
   Tx Count: 101
-  Nonce: 11171324088029032809
-  Timestamp: 2025-11-04T20:23:04Z
+  Nonce: 4251730881008679589
+  Timestamp: 2025-11-05T16:34:31Z
 
 Block #94:
-  Hash: 000001067c9099a2...
-  Prev: 0000028315226acb...
+  Hash: 0000011ff70a4b0e...
+  Prev: 0000073825a03e90...
   Tx Count: 101
-  Nonce: 11382097876234260114
-  Timestamp: 2025-11-04T20:23:06Z
+  Nonce: 14658669933666618526
+  Timestamp: 2025-11-05T16:34:31Z
 
 Block #95:
-  Hash: 0000046a2de05da3...
-  Prev: 000001067c9099a2...
+  Hash: 00000faa85643f85...
+  Prev: 0000011ff70a4b0e...
   Tx Count: 101
-  Nonce: 10564381066069687692
-  Timestamp: 2025-11-04T20:23:06Z
+  Nonce: 11098455276189486239
+  Timestamp: 2025-11-05T16:34:31Z
 
 Block #96:
-  Hash: 00000f58b296f05a...
-  Prev: 0000046a2de05da3...
+  Hash: 00000d77f3fc986f...
+  Prev: 00000faa85643f85...
   Tx Count: 101
-  Nonce: 10136058796460242964
-  Timestamp: 2025-11-04T20:23:07Z
+  Nonce: 14167237496345914107
+  Timestamp: 2025-11-05T16:34:31Z
 
 Block #97:
-  Hash: 000002f9b1e40abb...
-  Prev: 00000f58b296f05a...
+  Hash: 000003e9f6bd1e95...
+  Prev: 00000d77f3fc986f...
   Tx Count: 101
-  Nonce: 3047176870592842597
-  Timestamp: 2025-11-04T20:23:08Z
+  Nonce: 8528092951361932569
+  Timestamp: 2025-11-05T16:34:32Z
 
 Block #98:
-  Hash: 00000be3f073787a...
-  Prev: 000002f9b1e40abb...
+  Hash: 0000008ba51a9724...
+  Prev: 000003e9f6bd1e95...
   Tx Count: 101
-  Nonce: 16981919898412610259
-  Timestamp: 2025-11-04T20:23:08Z
+  Nonce: 16664107019076675481
+  Timestamp: 2025-11-05T16:34:32Z
 
 Block #99:
-  Hash: 00000c585a079380...
-  Prev: 00000be3f073787a...
+  Hash: 00000cd4d56c0271...
+  Prev: 0000008ba51a9724...
   Tx Count: 101
-  Nonce: 4055038262308922365
-  Timestamp: 2025-11-04T20:23:09Z
+  Nonce: 3117777786968559441
+  Timestamp: 2025-11-05T16:34:32Z
 
 Block #100:
-  Hash: 000004c24fe05b92...
-  Prev: 00000c585a079380...
+  Hash: 0000015e608a2026...
+  Prev: 00000cd4d56c0271...
   Tx Count: 101
-  Nonce: 5672568115452852154
-  Timestamp: 2025-11-04T20:23:10Z
+  Nonce: 16933566248218634210
+  Timestamp: 2025-11-05T16:34:32Z
 ----------------------------
 
 Viskas!
