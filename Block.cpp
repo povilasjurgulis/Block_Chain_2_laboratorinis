@@ -1,16 +1,17 @@
 #include "Block.h"
 #include <ctime>
+#include <random>
 
 Block::Block() : nonce(0), difficulty_target(4), is_mined(false) {
     timestamp = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
-    version = "v0.1";
+    version = "v0.2";
 }
 
 Block::Block(const string& prev_hash, const std::vector<Transaction>& txs, uint32_t difficulty) 
     : previous_block_hash(prev_hash), transactions(txs), difficulty_target(difficulty), 
       nonce(0), is_mined(false) {
     timestamp = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
-    version = "v0.1";
+    version = "v0.2";
     computeMerkleRoot();
 }
 
@@ -85,6 +86,43 @@ void Block::mineBlock() {
         
         nonce++;
     }
+}
+
+bool Block::tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint64_t &attemptsDone, uint64_t &elapsedMs) {
+    using namespace std::chrono;
+    string target(difficulty_target, '0');
+    auto start_time = steady_clock::now();
+    attemptsDone = 0;
+    const uint64_t checkInterval = 1024;
+
+    while (attemptsDone < maxAttempts) {
+        block_hash = calculateBlockHash();
+        if (block_hash.substr(0, difficulty_target) == target) {
+            is_mined = true;
+            auto end_time = steady_clock::now();
+            elapsedMs = duration_cast<milliseconds>(end_time - start_time).count();
+            return true;
+        }
+
+        nonce++;
+        attemptsDone++;
+
+        if ((attemptsDone & (checkInterval - 1)) == 0) {
+            auto now = steady_clock::now();
+            if (duration_cast<milliseconds>(now - start_time).count() >= (int64_t)timeLimitMs) break;
+        }
+    }
+
+    auto end_time = steady_clock::now();
+    elapsedMs = duration_cast<milliseconds>(end_time - start_time).count();
+    return false;
+}
+
+void Block::setNonce(uint64_t n) {
+    nonce = n;
+    // reset mined state/hash
+    is_mined = false;
+    block_hash.clear();
 }
 
 string Block::calculateBlockHash() const {

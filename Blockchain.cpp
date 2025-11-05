@@ -83,9 +83,49 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
     Transaction reward_transaction("SYSTEM", mining_reward_address, mining_reward);
     selected.push_back(reward_transaction);
 
-    // Create and mine block from selected valid transactions
+    // Create block from selected valid transactions
     Block new_block(getLatestBlock().getBlockHash(), selected, difficulty);
-    new_block.mineBlock();
+
+    // Candidate/time-limited mining parameters (v0.2): try K candidates, each for timeLimitMs
+    const int CANDIDATES = 5;
+    const uint64_t TIME_LIMIT_MS = 5000; // 5 seconds per candidate
+    const uint64_t MAX_ATTEMPTS = 0xFFFFFFFFULL; // effectively unlimited per candidate except time
+
+    std::random_device rd;
+    std::mt19937_64 rng(rd());
+    std::uniform_int_distribution<uint64_t> seed_dist(0, UINT64_MAX);
+
+    bool found = false;
+    uint64_t foundAttempts = 0;
+    uint64_t foundElapsed = 0;
+
+    for (int c = 0; c < CANDIDATES; ++c) {
+        Block candidate = new_block; // copy
+        uint64_t seed = seed_dist(rng);
+        candidate.setNonce(seed);
+
+        print_both("Attempting candidate " + std::to_string(c + 1) + " with start nonce " + std::to_string(seed) + "\n");
+
+        uint64_t attemptsDone = 0;
+        uint64_t elapsedMs = 0;
+        bool ok = candidate.tryMineForDuration(TIME_LIMIT_MS, MAX_ATTEMPTS, attemptsDone, elapsedMs);
+
+        print_both("  Candidate " + std::to_string(c + 1) + " tried " + std::to_string(attemptsDone) + " attempts in " + std::to_string(elapsedMs) + "ms -> " + (ok ? string("FOUND") : string("NOT FOUND")) + "\n");
+
+        if (ok) {
+            found = true;
+            foundAttempts = attemptsDone;
+            foundElapsed = elapsedMs;
+            new_block = candidate; // use mined candidate
+            break;
+        }
+    }
+
+    if (!found) {
+        print_both("No candidate succeeded within time limits — falling back to full mining for this block (may take longer)\n");
+        new_block.mineBlock();
+    }
+
     chain.push_back(new_block);
 
     // Apply selected transactions to actual users

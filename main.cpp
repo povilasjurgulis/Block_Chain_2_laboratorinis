@@ -86,8 +86,8 @@ int main()
 void demonstrateBlockchainProcess(std::vector<User>& users, 
                                  const std::vector<Transaction>& all_transactions) {
     
-    // Create blockchain with difficulty 6 (nors čia gana sunkiai)
-    const uint32_t DIFFICULTY = 6;
+    // Create blockchain with difficulty 5 (nors čia gana sunkiai)
+    const uint32_t DIFFICULTY = 5;
     const int MAX_TXS_PER_BLOCK = 100;
     const double MINING_REWARD = 50.0;
     

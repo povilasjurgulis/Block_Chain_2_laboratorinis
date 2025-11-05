@@ -39,6 +39,9 @@ public:
     
     // Mining and utility methods
     void mineBlock();
+    // Try mining for a limited time / attempts. Returns true if a valid nonce was found.
+    bool tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint64_t &attemptsDone, uint64_t &elapsedMs);
+    void setNonce(uint64_t n);
     string calculateBlockHash() const;
     bool isValidBlock() const;
     void displayBlock() const;
