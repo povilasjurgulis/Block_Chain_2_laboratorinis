@@ -88,7 +88,7 @@ void Block::mineBlock() {
     }
 }
 
-bool Block::tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint64_t &attemptsDone, uint64_t &elapsedMs) {
+bool Block::tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint64_t &attemptsDone, uint64_t &elapsedMs, std::atomic<bool>* stopFlag) {
     using namespace std::chrono;
     string target(difficulty_target, '0');
     auto start_time = steady_clock::now();
@@ -96,9 +96,14 @@ bool Block::tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint6
     const uint64_t checkInterval = 1024;
 
     while (attemptsDone < maxAttempts) {
+        // If another thread signaled to stop, abort
+        if (stopFlag && stopFlag->load()) break;
+
         block_hash = calculateBlockHash();
         if (block_hash.substr(0, difficulty_target) == target) {
             is_mined = true;
+            // signal others if requested
+            if (stopFlag) stopFlag->store(true);
             auto end_time = steady_clock::now();
             elapsedMs = duration_cast<milliseconds>(end_time - start_time).count();
             return true;
@@ -108,6 +113,8 @@ bool Block::tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint6
         attemptsDone++;
 
         if ((attemptsDone & (checkInterval - 1)) == 0) {
+            // allow external stop or time check
+            if (stopFlag && stopFlag->load()) break;
             auto now = steady_clock::now();
             if (duration_cast<milliseconds>(now - start_time).count() >= (int64_t)timeLimitMs) break;
         }

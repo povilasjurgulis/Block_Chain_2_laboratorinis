@@ -1,5 +1,8 @@
 #include "Blockchain.h"
 #include <unordered_map>
+#include <atomic>
+#include <thread>
+#include <mutex>
 
 Blockchain::Blockchain(uint32_t difficulty, double reward) 
     : difficulty(difficulty), mining_reward(reward) {
@@ -102,26 +105,62 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
 
     for (int round = 0; round < MAX_ROUNDS && !found; ++round) {
         print_both("Candidate mining round " + std::to_string(round + 1) + ": time limit = " + std::to_string(timeLimitMs) + " ms per candidate\n");
-        for (int c = 0; c < CANDIDATES; ++c) {
-            Block candidate = new_block; // copy
-            uint64_t seed = seed_dist(rng);
-            candidate.setNonce(seed);
 
-            print_both(" Attempting candidate " + std::to_string(c + 1) + " with start nonce " + std::to_string(seed) + "\n");
+        // Prepare seeds for all candidates
+        std::vector<uint64_t> seeds;
+        seeds.reserve(CANDIDATES);
+        for (int i = 0; i < CANDIDATES; ++i) seeds.push_back(seed_dist(rng));
 
-            uint64_t attemptsDone = 0;
-            uint64_t elapsedMs = 0;
-            bool ok = candidate.tryMineForDuration(timeLimitMs, MAX_ATTEMPTS, attemptsDone, elapsedMs);
+        // Determine number of worker threads = min(CANDIDATES, hardware_concurrency())
+        unsigned int hw = std::thread::hardware_concurrency();
+        if (hw == 0) hw = 1;
+        int workers = std::min<int>(CANDIDATES, (int)hw);
 
-            print_both("  Candidate " + std::to_string(c + 1) + " tried " + std::to_string(attemptsDone) + " attempts in " + std::to_string(elapsedMs) + "ms -> " + (ok ? string("FOUND") : string("NOT FOUND")) + "\n");
+        print_both(" Launching " + std::to_string(workers) + " worker threads for " + std::to_string(CANDIDATES) + " candidates\n");
 
-            if (ok) {
-                found = true;
-                foundAttempts = attemptsDone;
-                foundElapsed = elapsedMs;
-                new_block = candidate; // use mined candidate
-                break;
+        std::atomic<int> nextIdx(0);
+        std::atomic<bool> stopFlag(false);
+        std::mutex resultMutex;
+        Block winner;
+
+        auto worker = [&](int workerId) {
+            while (!stopFlag.load()) {
+                int idx = nextIdx.fetch_add(1);
+                if (idx >= CANDIDATES) break;
+
+                uint64_t seed = seeds[idx];
+                Block candidate = new_block;
+                candidate.setNonce(seed);
+
+                print_both("  Worker " + std::to_string(workerId) + " attempting candidate " + std::to_string(idx + 1) + " with start nonce " + std::to_string(seed) + "\n");
+
+                uint64_t attemptsDone = 0;
+                uint64_t elapsedMs = 0;
+                bool ok = candidate.tryMineForDuration(timeLimitMs, MAX_ATTEMPTS, attemptsDone, elapsedMs, &stopFlag);
+
+                print_both("   Worker " + std::to_string(workerId) + " candidate " + std::to_string(idx + 1) + " tried " + std::to_string(attemptsDone) + " attempts in " + std::to_string(elapsedMs) + "ms -> " + (ok ? string("FOUND") : string("NOT FOUND")) + "\n");
+
+                if (ok) {
+                    std::lock_guard<std::mutex> lk(resultMutex);
+                    if (!stopFlag.load()) stopFlag.store(true); // ensure others stop
+                    winner = candidate;
+                    return;
+                }
             }
+        };
+
+        // Launch worker threads
+        std::vector<std::thread> threads;
+        threads.reserve(workers);
+        for (int w = 0; w < workers; ++w) threads.emplace_back(worker, w + 1);
+
+        // Wait for workers to finish
+        for (auto &t : threads) if (t.joinable()) t.join();
+
+        if (stopFlag.load()) {
+            found = true;
+            new_block = winner;
+            print_both(" A worker found a valid nonce in round " + std::to_string(round + 1) + "\n");
         }
 
         if (!found) {

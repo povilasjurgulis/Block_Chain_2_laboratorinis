@@ -3,6 +3,9 @@
 
 #include "main.h"
 #include "all_classes.h"
+#include <atomic>
+#include <thread>
+#include <mutex>
 
 class Block {
 private:
@@ -40,7 +43,7 @@ public:
     // Mining and utility methods
     void mineBlock();
     // Try mining for a limited time / attempts. Returns true if a valid nonce was found.
-    bool tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint64_t &attemptsDone, uint64_t &elapsedMs);
+    bool tryMineForDuration(uint64_t timeLimitMs, uint64_t maxAttempts, uint64_t &attemptsDone, uint64_t &elapsedMs, std::atomic<bool>* stopFlag = nullptr);
     void setNonce(uint64_t n);
     string calculateBlockHash() const;
     bool isValidBlock() const;
