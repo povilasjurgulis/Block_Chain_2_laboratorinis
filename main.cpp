@@ -120,7 +120,7 @@ void demonstrateBlockchainProcess(std::vector<User>& users,
         
         auto mine_start = high_resolution_clock::now();
         blockchain.minePendingTransactions(miner_address, const_cast<std::vector<User>&>(users), MAX_TXS_PER_BLOCK);
-    auto mine_end = high_resolution_clock::now();
+        auto mine_end = high_resolution_clock::now();
         auto mine_duration = duration_cast<milliseconds>(mine_end - mine_start);
         
         print_both("  Mining completed in " + std::to_string(mine_duration.count()) + "ms\n");

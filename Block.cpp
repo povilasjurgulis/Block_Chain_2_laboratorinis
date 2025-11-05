@@ -59,6 +59,7 @@ void Block::mineBlock() {
     // Print header preview (short hashes, ISO timestamp, tx root)
     print_both("Header Preview:\n");
     print_both("  Prev Hash: " + previous_block_hash.substr(0, 12) + "...\n");
+    print_both("  Version: " + version + "\n");
     // Format timestamp (milliseconds -> ISO 8601 UTC)
     time_t secs = timestamp / 1000;
     struct tm tm_utc;
@@ -66,7 +67,7 @@ void Block::mineBlock() {
     char buf[32];
     strftime(buf, sizeof(buf), "%Y-%m-%dT%H:%M:%SZ", &tm_utc);
     print_both(string("  Timestamp: ") + buf + "\n");
-    print_both("  TxRoot: " + merkle_root_hash.substr(0, 12) + "...\n");
+    print_both("  Merkle Root: " + merkle_root_hash.substr(0, 12) + "...\n");
     print_both("  Difficulty Target: " + target + "\n");
     
     while (true) {
@@ -200,6 +201,12 @@ void Block::displayHeader() const {
     } else {
         print_both("  Prev: " + previous_block_hash.substr(0, 16) + "...\n");
     }
+
+    // Version
+    print_both("  Version: " + version + "\n");
+
+    // Short Merkle root
+    print_both("  Merkle Root: " + merkle_root_hash.substr(0, 12) + "...\n");
 
     // Tx Count
     print_both("  Tx Count: " + std::to_string(transactions.size()) + "\n");

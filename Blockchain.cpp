@@ -28,8 +28,8 @@ void Blockchain::addTransaction(const Transaction& transaction) {
 }
 
 void Blockchain::minePendingTransactions(const string& mining_reward_address, std::vector<User>& users, size_t max_txs_per_block) {
-    // Record previous mempool size
-    size_t prev_mempool = pending_transactions.size();
+    // 1. Mempool (transaction selection)
+    size_t prev_mempool = pending_transactions.size(); // Record previous mempool size
 
     // We'll select up to max_txs_per_block valid transactions from pending_transactions
     std::vector<Transaction> selected;
@@ -42,8 +42,9 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
     size_t rejected_invalid_id = 0;
     size_t rejected_funds = 0;
 
+    // Select valid transactions
     for (const auto& tx : pending_transactions) {
-        if (selected.size() >= max_txs_per_block) break;
+        if (selected.size() >= max_txs_per_block) break; // reached max for this block
 
         // Verify transaction ID by recomputing
         std::string txdata = tx.toString();
@@ -68,7 +69,7 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
 
         double sender_balance = 0.0;
         auto it = sim_balances.find(from);
-        if (it != sim_balances.end()) sender_balance = it->second;
+        if (it != sim_balances.end()) sender_balance = it->second; // find simulated balance
 
         if (sender_balance >= amount) {
             // accept: apply to simulated balances
@@ -82,14 +83,14 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
         }
     }
 
-    // Add mining reward transaction (always included)
+    // 2. Pridėti mining reward transaction
     Transaction reward_transaction("SYSTEM", mining_reward_address, mining_reward);
     selected.push_back(reward_transaction);
 
-    // Create block from selected valid transactions
+    // 3. Create block from selected valid transactions
     Block new_block(getLatestBlock().getBlockHash(), selected, difficulty);
 
-    // Candidate/time-limited mining parameters (v0.2): try K candidates per round, for timeLimitMs each
+    // 4. Parallel candidate mining with time limits
     const int CANDIDATES = 5;
     uint64_t timeLimitMs = 5000; // initial 5 seconds per candidate
     const uint64_t MAX_ATTEMPTS = 0xFFFFFFFFULL; // effectively unlimited per candidate except time
@@ -112,7 +113,7 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
         for (int i = 0; i < CANDIDATES; ++i) seeds.push_back(seed_dist(rng));
 
         // Determine number of worker threads = min(CANDIDATES, hardware_concurrency())
-        unsigned int hw = std::thread::hardware_concurrency();
+        unsigned int hw = std::thread::hardware_concurrency(); // hardware threads available
         if (hw == 0) hw = 1;
         int workers = std::min<int>(CANDIDATES, (int)hw);
 
@@ -155,9 +156,9 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
         for (int w = 0; w < workers; ++w) threads.emplace_back(worker, w + 1);
 
         // Wait for workers to finish
-        for (auto &t : threads) if (t.joinable()) t.join();
+        for (auto &t : threads) if (t.joinable()) t.join(); // wait
 
-        if (stopFlag.load()) {
+        if (stopFlag.load()) { // someone found a candidate
             found = true;
             new_block = winner;
             print_both(" A worker found a valid nonce in round " + std::to_string(round + 1) + "\n");
@@ -170,6 +171,7 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
         }
     }
 
+    // 5. Final fallback: if no candidate succeeded, do full mining (blocking)
     if (!found) {
         print_both("No candidate succeeded after retries — falling back to full mining for this block (may take longer)\n");
         new_block.mineBlock();
@@ -177,7 +179,7 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
 
     chain.push_back(new_block);
 
-    // Apply selected transactions to actual users
+    // 6. Apply selected transactions to actual users
     std::set<string> participants;
     for (const auto& tx : selected) {
         std::string from = tx.getFromAddress();
@@ -203,7 +205,7 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
         }
     }
 
-    // Remove selected transactions from pending_transactions (by transaction id)
+    // 7. Remove selected transactions from pending_transactions (by transaction id)
     std::set<string> included_ids;
     for (const auto& tx : selected) included_ids.insert(tx.getTransactionId());
 
@@ -216,7 +218,7 @@ void Blockchain::minePendingTransactions(const string& mining_reward_address, st
     }
     pending_transactions = std::move(remaining);
 
-    // Print summary: balances updated and mempool change
+    // 8. Print summary: balances updated and mempool change
     print_both("\nBalances updated for " + std::to_string(participants.size()) + " senders/receivers\n");
     print_both("Mempool size after block: " + std::to_string(prev_mempool) + " -> " + std::to_string(pending_transactions.size()) + "\n");
     if (rejected_invalid_id > 0) print_both("Rejected invalid TX IDs: " + std::to_string(rejected_invalid_id) + "\n");
